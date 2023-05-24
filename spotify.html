@@ -1,0 +1,277 @@
+<html>
+
+
+<!--=======================================================================-->
+
+
+ <head>
+   <title>Playlist Generator</title>
+   <script type='text/javascript' src='http://epilog.stanford.edu/javascript/epilog.js'></script>
+   <script type='text/javascript' src='http://worksheets.stanford.edu/javascript/worksheets.js'></script>
+   <link rel="stylesheet" href="styles.css">
+   <script></script>
+ </head>
+
+
+<!--=======================================================================-->
+
+
+<body style='background-color:#0a1017' onload='initialize()'>
+
+
+<!--=========================================================================-->
+
+
+ <center>
+   <table width='1250' bgcolor='#1dcc5d'>
+     <tr>
+       <td>
+
+
+<br/>
+<center>
+ <h1 >
+         Playlist Recommender<br/>
+
+ </h1>
+</center>
+
+
+<fieldset>
+    <center>
+    <h2> Select your mood! </h2>
+    <div class="range">
+        <input type="range" min="1" max="4">
+        <div class="ticks">
+          <span class="tick">sleep</span>
+          <span class="tick">study</span>
+          <span class="tick">workout</span>
+          <span class="tick">vibe</span>
+        </div>
+      </div>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2> Select [x] genres you want! </h2>
+        <table>
+            <tr>
+                <td width='120'><input type='checkbox' id='pop' onChange='modcheck(this)'/>Pop</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='hiphop' onChange='modcheck(this)'/>Hip-Hop</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='country' onChange='modcheck(this)'/>Country</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='rock' onChange='modcheck(this)'/>Rock</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='classical' onChange='modcheck(this)'/>Classical</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='rb' onChange='modcheck(this)'/>R&B</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='lofi' onChange='modcheck(this)'/>Lo-Fi</td>
+            </tr>
+        </table>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Select your desired playlist length!</h2>
+        <div>
+            <input type="range" min="1" max="120" value="50" class="slider" id="myRange" oninput="rangeValue.innerText = this.value">
+            <p id="rangeValue">10</p>
+        </div>
+    </center> 
+</fieldset>
+
+
+<fieldset>
+    <center>
+        <h2>Select [x] artists!</h2>
+
+        <select name="artists" id="artists">
+            <option value="volvo">Kendrick Lamar</option>
+            <option value="saab">Lana Del Rey</option>
+            <option value="mercedes">Luke Bryant</option>
+            <option value="audi">Bad Bunny</option>
+        </select>
+        <select name="artists" id="artists">
+            <option value="volvo">Kendrick Lamar</option>
+            <option value="saab">Lana Del Rey</option>
+            <option value="mercedes">Luke Bryant</option>
+            <option value="audi">Bad Bunny</option>
+        </select>
+        <select name="artists" id="artists">
+            <option value="volvo">Kendrick Lamar</option>
+            <option value="saab">Lana Del Rey</option>
+            <option value="mercedes">Luke Bryant</option>
+            <option value="audi">Bad Bunny</option>
+        </select>
+    </center>
+
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+<br/>
+<fieldset>
+ <table width='100%'>
+   <tr>
+     <td width='30%'>
+Requirements:<br/>
+<div id='discretemath' style='color:red'>&nbsp;&nbsp;CS 103 required.</div>
+<div id='theory' style='color:red'>&nbsp;&nbsp;One theoretical course.</div>
+<div id='problogic' style='color:red'>&nbsp;&nbsp;CS 109 or CS157.</div>
+<div id='prerequisites' style='color:red'>&nbsp;&nbsp;Prerequisites satisfied.</div>
+<div id='fivecourses' style='color:red'>&nbsp;&nbsp;At least five courses.</div>
+   </td>
+   <td valign='top'>
+Theory Courses:<br/>
+&nbsp;&nbsp;CS 154<br/>
+&nbsp;&nbsp;CS 157<br/>
+&nbsp;&nbsp;CS 161<br/>
+&nbsp;&nbsp;CS 254<br/>
+   </td>
+   <td width='50%' valign='top'>
+Prerequisites:<br/>
+&nbsp;&nbsp;CS 109 is a prerequisite for CS 229<br/>
+&nbsp;&nbsp;CS 145 is a prerequisite for CS 345<br/>
+&nbsp;&nbsp;CS 154 is a prerequisite for CS 254<br/>
+&nbsp;&nbsp;CS 157 is a prerequisite for CS 227<br/>
+&nbsp;&nbsp;CS 157 is a prerequisite for CS 345<br/>
+   </td>
+ </tr>
+</table>
+   </fieldset>
+
+
+       </td>
+     </tr>
+   </table>
+ </center>
+ <br/>
+
+
+<!--=======================================================================-->
+
+
+<dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
+value(cs103, false)
+value(cs109, false)
+value(cs145, false)
+value(cs154, false)
+value(cs157, false)
+value(cs161, false)
+value(cs164, false)
+value(cs172, false)
+value(cs173, false)
+value(cs188, false)
+value(cs221, false)
+value(cs223, false)
+value(cs227, false)
+value(cs228, false)
+value(cs229, false)
+value(cs254, false)
+value(cs261, false)
+value(cs264, false)
+value(cs272, false)
+value(cs273, false)
+value(cs321, false)
+value(cs329, false)
+value(cs345, false)
+value(cs361, false)
+value(cs399, false)
+</dataset>
+
+
+<!--=======================================================================-->
+
+
+<dataset id='testdata' type='text/hrf' style='display:none'></dataset>
+
+
+<!--=======================================================================-->
+
+
+<ruleset id='library' style='font-family:courier;display:none' rows='20'>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Rules
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+course(X) :- value(X, Y)
+
+
+theory(cs154)
+theory(cs157)
+theory(cs161)
+theory(cs254)
+
+
+prereq(cs109, cs229)
+prereq(cs145, cs345)
+prereq(cs154, cs254)
+prereq(cs157, cs227)
+prereq(cs157, cs345)
+
+
+satisfied(discretemath) :- value(cs103, true)
+
+
+satisfied(theory) :- theory(X) & value(X, true)
+
+
+satisfied(problogic) :- value(cs109, true)
+satisfied(problogic) :- value(cs157, true)
+
+
+satisfied(fivecourses) :- countofall(X, value(X, true), C) & min(C, 5, 5)
+
+
+unsatisfied(prerequisites) :- prereq(X, Y) & value(Y, true) & value(X, false)
+satisfied(prerequisites) :- ~unsatisfied(prerequisites)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+style(R,color,red) :- req(R) & ~satisfied(R)
+style(R,color,black) :- req(R) & satisfied(R)
+
+
+req(discretemath)
+req(theory)
+req(problogic)
+req(fivecourses)
+req(prerequisites)
+
+
+
+
+select(X,true) :: ~value(X,false) & value(X,true)
+select(X,false) :: ~value(X,true) & value(X,false)
+</ruleset>
+
+
+<!--=======================================================================-->
+
+
+</body>
+
+
+<!--=======================================================================-->
+
+
+</html>
