@@ -1,3 +1,2 @@
 # playlistRecommender
-
-A playlist recommender.
+CS151 Project: A playlist recommender.
