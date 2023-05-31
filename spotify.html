@@ -34,20 +34,39 @@
          Playlist Recommender<br/>
 
  </h1>
+<img src="spotifylogo.png" alt="Spotify Logo" style="width:178px;height:184;">
 </center>
 
-
+<br>
 <fieldset>
     <center>
     <h2> Select your mood! </h2>
-    <div class="range">
-        <input type="range" min="1" max="4">
+    <p id="genre">sleep</p>
+    <div>
+        <input type="range" min="1" max="4" value = "1" oninput="changeValue(this.value)" onChange='modcheck(this)'>     
+        <script>
+           let genre = document.getElementById('genre');
+           function changeValue(newVal) {
+               text = ""
+                if (newVal == 1){
+                    text = "sleep";
+                } else if (newVal == 2){
+                    text = "study";
+                } else if (newVal == 3){
+                    text = "workout";
+                } else {
+                    text = "vibe";
+                }
+                genre.innerText = text;
+           }
+        </script>
         <div class="ticks">
-          <span class="tick">sleep</span>
-          <span class="tick">study</span>
-          <span class="tick">workout</span>
-          <span class="tick">vibe</span>
+          <span class="tick" id ="sleep">sleep</span>
+          <span class="tick" id ="study">study</span>
+          <span class="tick" id ="workout">workout</span>
+          <span class="tick" id="vibe">vibe</span>
         </div>
+
       </div>
     </center>
 </fieldset>
@@ -57,10 +76,10 @@
         <h2> Select [x] genres you want! </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='pop' onChange='modcheck(this)'/>Pop</td>
+                <td width='120'><input type='checkbox' id='popmusic' onChange='modcheck(this)'/>Pop</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='rap' onChange='modcheck(this)'/>Rap</td>
+                <td width='120'><input type='checkbox' id='hiphop' onChange='modcheck(this)'/>Hip-Hop</td>
             </tr>
             <tr>
                 <td width='120'><input type='checkbox' id='country' onChange='modcheck(this)'/>Country</td>
@@ -85,8 +104,9 @@
     <center>
         <h2>Select your desired playlist length!</h2>
         <div>
-            <input type="range" min="1" max="120" value="50" class="slider" id="myRange" oninput="rangeValue.innerText = this.value">
-            <p id="rangeValue">10</p>
+            <input type="range" min="1" max="120" value="50" class="slider" id="length"
+                onChange='modcheck(this)' oninput="rangeValue.innerText = this.value">
+            <p id="rangeValue">0</p>
         </div>
     </center> 
 </fieldset>
@@ -95,24 +115,22 @@
 <fieldset>
     <center>
         <h2>Select [x] artists!</h2>
+        <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
 
-        <select name="artists" id="artist1">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
-        </select>
-        <select name="artists" id="artist2">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
-        </select>
-        <select name="artists" id="artist3">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
+        <select name="artists" id="artists" multiple size="13">
+            <option value="icespice">Ice Spice</option>
+            <option value="drake">Drake</option>
+            <option value="bts">BTS</option>
+            <option value="billycyrus">Billy Cyrus</option>
+            <option value="chrisyoung">Chris Young</option>
+            <option value="petitbiscuit">Petit Biscuit</option>
+            <option value="orchidbae">orchidbae</option>
+            <option value="bonjovi">Bon Jovi</option>
+            <option value="tinaturner">Tina Turner</option>
+            <option value="bach">Claude Debussy</option>
+            <option value="debussy">Johann Bach</option>
+            <option value="sza">SZA</option>
+            <option value="theweekend">The Weekend</option>
         </select>
     </center>
 
@@ -122,19 +140,37 @@
 
 <fieldset>
     <center>
-    <h4>Is explicit content allowed?</h4>
-    <input type="checkbox" name="explicit" value="yes">Yes<br>      
-    <input type="checkbox" name="explicit" value="no">No<br>
+    <div id="wrapper">
+            <h4 for="yes_no_explicit">Is explicit content allowed?</h4>
+          <p>
+            <input type="radio" name="yes_no" id="yexplicit">Yes</input>
+          </p>
+          <p>
+            <input type="radio" name="yes_no" id="nexplicit">No</input>
+          </p>
+    </div>
+
+    
     </center>
 </fieldset>
 
 <fieldset>
     <center>
-    <h4>Would you like songs with lyrics?</h4>
-    <input type="checkbox" name="lyrics" value="yes">Yes<br>      
-    <input type="checkbox" name="lyrics" value="no">No<br>
+        <div id="wrapper">
+                <h4 for="yes_no_lyrics">Would you like songs with lyrics?</h4>
+              <p>
+                <input type="radio" name="yes_no" id="yes_lyrics" onChange='modcheck(this)'>Yes</input>
+              </p>
+              <p>
+                <input type="radio" name="yes_no" id="no_lyrics" onChange='modcheck(this)'>No</input>
+              </p>
+        </div>
     </center>
 </fieldset>
+
+
+
+
 
 
 <br/>
@@ -167,6 +203,8 @@ Prerequisites:<br/>
  </tr>
 </table>
    </fieldset>
+
+
        </td>
      </tr>
    </table>
@@ -178,6 +216,7 @@ Prerequisites:<br/>
 
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
+
 %%% Genres %%%
 
 value(hiphop, false)
