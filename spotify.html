@@ -104,7 +104,8 @@
     <center>
         <h2>Select your desired playlist length!</h2>
         <div>
-            <input type="range" min="1" max="120" value="50" class="slider" id="myRange" oninput="rangeValue.innerText = this.value">
+            <input type="range" min="1" max="120" value="50" class="slider" id="length"
+                onChange='modcheck(this)' oninput="rangeValue.innerText = this.value">
             <p id="rangeValue">0</p>
         </div>
     </center> 
@@ -114,24 +115,13 @@
 <fieldset>
     <center>
         <h2>Select [x] artists!</h2>
+        <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
 
-        <select name="artists" id="artists">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
-        </select>
-        <select name="artists" id="artists">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
-        </select>
-        <select name="artists" id="artists">
-            <option value="volvo">Kendrick Lamar</option>
-            <option value="saab">Lana Del Rey</option>
-            <option value="mercedes">Luke Bryant</option>
-            <option value="audi">Bad Bunny</option>
+        <select name="artists" id="artists" multiple >
+            <option value="kendrick">Kendrick Lamar</option>
+            <option value="lana">Lana Del Rey</option>
+            <option value="luke">Luke Bryant</option>
+            <option value="badbunny">Bad Bunny</option>
         </select>
     </center>
 
@@ -141,17 +131,31 @@
 
 <fieldset>
     <center>
-    <h4>Is explicit content allowed?</h4>
-    <input type="checkbox" name="explicit" value="yes"> Yes <br>      
-    <input type="checkbox" name="explicit" value="no"> No <br>
+    <div id="wrapper">
+            <h4 for="yes_no_explicit">Is explicit content allowed?</h4>
+          <p>
+            <input type="radio" name="yes_no" id="yexplicit">Yes</input>
+          </p>
+          <p>
+            <input type="radio" name="yes_no" id="nexplicit">No</input>
+          </p>
+    </div>
+
+    
     </center>
 </fieldset>
 
 <fieldset>
     <center>
-    <h4>Would you like songs with lyrics?</h4>
-    <input type="checkbox" name="lyrics" value="yes"> Yes <br>      
-    <input type="checkbox" name="lyrics" value="no"> No <br>
+        <div id="wrapper">
+                <h4 for="yes_no_lyrics">Would you like songs with lyrics?</h4>
+              <p>
+                <input type="radio" name="yes_no" id="yes_lyrics" onChange='modcheck(this)'>Yes</input>
+              </p>
+              <p>
+                <input type="radio" name="yes_no" id="no_lyrics" onChange='modcheck(this)'>No</input>
+              </p>
+        </div>
     </center>
 </fieldset>
 
@@ -203,31 +207,28 @@ Prerequisites:<br/>
 
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
-value(cs103, false)
-value(cs109, false)
-value(cs145, false)
-value(cs154, false)
-value(cs157, false)
-value(cs161, false)
-value(cs164, false)
-value(cs172, false)
-value(cs173, false)
-value(cs188, false)
-value(cs221, false)
-value(cs223, false)
-value(cs227, false)
-value(cs228, false)
-value(cs229, false)
-value(cs254, false)
-value(cs261, false)
-value(cs264, false)
-value(cs272, false)
-value(cs273, false)
-value(cs321, false)
-value(cs329, false)
-value(cs345, false)
-value(cs361, false)
-value(cs399, false)
+
+%%% Genres %%%
+
+value(hiphop, false)
+value(country, false)
+value(rock, false)
+value(classical, false)
+value(rb, false)
+value(lofi, false)
+
+%%% Mood %%%
+
+value(sleep, false)
+value(study, false)
+value(workout, false)
+value(vibe, false)
+
+value(length, 0)
+
+%%% Radio %%%
+
+
 </dataset>
 
 
