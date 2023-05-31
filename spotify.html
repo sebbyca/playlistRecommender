@@ -111,6 +111,7 @@
     </center> 
 </fieldset>
 
+<!--To-do: Ask if this multiselector is correct-->
 
 <fieldset>
     <center>
@@ -118,19 +119,19 @@
         <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
 
         <select name="artists" id="artists" multiple size="13">
-            <option value="icespice">Ice Spice</option>
-            <option value="drake">Drake</option>
-            <option value="bts">BTS</option>
-            <option value="billycyrus">Billy Cyrus</option>
-            <option value="chrisyoung">Chris Young</option>
-            <option value="petitbiscuit">Petit Biscuit</option>
-            <option value="orchidbae">orchidbae</option>
-            <option value="bonjovi">Bon Jovi</option>
-            <option value="tinaturner">Tina Turner</option>
-            <option value="bach">Claude Debussy</option>
-            <option value="debussy">Johann Bach</option>
-            <option value="sza">SZA</option>
-            <option value="theweekend">The Weeknd</option>
+            <option value="icespice" onChange='modmultiselector(this)'>Ice Spice</option>
+            <option value="drake" onChange='modmultiselector(this)'>Drake</option>
+            <option value="bts" onChange='modmultiselector(this)'>BTS</option>
+            <option value="billycyrus" onChange='modmultiselector(this)'>Billy Cyrus</option>
+            <option value="chrisyoung" onChange='modmultiselector(this)'>Chris Young</option>
+            <option value="petitbiscuit" onChange='modmultiselector(this)'>Petit Biscuit</option>
+            <option value="orchidbae" onChange='modmultiselector(this)'>orchidbae</option>
+            <option value="bonjovi" onChange='modmultiselector(this)'>Bon Jovi</option>
+            <option value="tinaturner" onChange='modmultiselector(this)'>Tina Turner</option>
+            <option value="debussy" onChange='modmultiselector(this)'>Claude Debussy</option>
+            <option value="bach" onChange='modmultiselector(this)'>J.S. Bach</option>
+            <option value="sza" onChange='modmultiselector(this)'>SZA</option>
+            <option value="theweekend" onChange='modmultiselector(this)'>The Weeknd</option>
 
         </select>
     </center>
@@ -138,33 +139,37 @@
 
 </fieldset>
 
+<!-- TO-DO: Ask about getting functionality with radio-->
 
 <fieldset>
     <center>
     <div id="wrapper">
             <h4 for="yes_no_explicit">Is explicit content allowed?</h4>
-          <p>
-            <input type="radio" name="yes_no" id="yexplicit">Yes</input>
-          </p>
-          <p>
-            <input type="radio" name="yes_no" id="nexplicit">No</input>
-          </p>
+
+
+            <input type="radio" id="yesExplicit" name="explicit" value="yes" onchange='modradio(this)'/>
+            <label for="yesExplicit">Yes</label>
+
+            <input type="radio" id="noExplicit" name="explicit" value="no" onchange='modradio(this)' />
+            <label for="noExplicit">No</label>
     </div>
 
     
     </center>
 </fieldset>
 
+
 <fieldset>
     <center>
         <div id="wrapper">
                 <h4 for="yes_no_lyrics">Would you like songs with lyrics?</h4>
-              <p>
-                <input type="radio" name="yes_no" id="yes_lyrics" onChange='modcheck(this)'>Yes</input>
-              </p>
-              <p>
-                <input type="radio" name="yes_no" id="no_lyrics" onChange='modcheck(this)'>No</input>
-              </p>
+
+                <input type="radio" id="yesLyrics" name="lyrics" value="yes" onchange='modradio(this)'/>
+                <label for="yesLyrics">Yes</label>
+
+                <input type="radio" id="noLyrics" name="lyrics" value="no" onchange='modradio(this)' />
+                <label for="noLyrics">No</label>
+             
         </div>
     </center>
 </fieldset>
@@ -240,9 +245,27 @@ value(study, false)
 value(workout, false)
 value(vibe, false)
 
+%%% Artists %%% 
+
+value(icespice, false)
+value(drake, false)
+value(bts, false)
+value(billycyrus, false)
+value(chrisyoung, false)
+value(petitbiscuit, false)
+value(orchidbae, false)
+value(bonjovi, false)
+value(tinaturner, false)
+value(bach, false)
+value(debussy, false)
+value(sza, false)
+value(theweekend, false)
+
+
 
 %%% Radio %%%
-
+value(lyrics, yes)
+value(explicit, yes)
 
 %%%%%%%%%%%
 RAP SONGS
