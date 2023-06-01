@@ -133,6 +133,41 @@
 
 <fieldset>
     <center>
+        <h2>Do you enjoy singing along to music? </h2>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Select 3 of the artists you like the most</h2>
+        <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
+
+        <select name="artists" id="artists" multiple size="13" onChange='modmultiselector(this)'>
+            <option value="icespice">Ice Spice</option>
+            <option value="drake">Drake</option>
+            <option value="bts" >BTS</option>
+            <option value="billycyrus">Billy Cyrus</option>
+            <option value="chrisyoung">Chris Young</option>
+            <option value="petitbiscuit">Petit Biscuit</option>
+            <option value="orchidbae">orchidbae</option>
+            <option value="bonjovi">Bon Jovi</option>
+            <option value="tinaturner">Tina Turner</option>
+            <option value="debussy">Claude Debussy</option>
+            <option value="bach">J.S. Bach</option>
+            <option value="sza">SZA</option>
+            <option value="theweekend">The Weeknd</option>
+        </select>
+    </center>
+
+
+</fieldset>
+
+<fieldset>
+    <center>
         <h2>Favorite Pizza Toppings? </h2>
         <select>
             <option>Veggie</option>
@@ -159,28 +194,45 @@
 
 <fieldset>
     <center>
-        <h2> Select [x] genres you want! </h2>
+        <h2> What are your favorite movie genres? (choose as many) </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='popmusic' onChange='modcheck(this)'/>Pop</td>
+                <td width='120'><input type='checkbox' id='thriller' onChange='modcheck(this)'/>Thriller</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='hiphop' onChange='modcheck(this)'/>Hip-Hop</td>
+                <td width='120'><input type='checkbox' id='comedy' onChange='modcheck(this)'/>Comedy</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='country' onChange='modcheck(this)'/>Country</td>
+                <td width='120'><input type='checkbox' id='action' onChange='modcheck(this)'/>Action</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='rock' onChange='modcheck(this)'/>Rock</td>
+                <td width='120'><input type='checkbox' id='romcom' onChange='modcheck(this)'/>Rom-Com</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='classical' onChange='modcheck(this)'/>Classical</td>
+                <td width='120'><input type='checkbox' id='horror' onChange='modcheck(this)'/>Horror</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='rb' onChange='modcheck(this)'/>R&B</td>
+                <td width='120'><input type='checkbox' id='drama' onChange='modcheck(this)'/>Drama</td>
+            </tr>
+        </table>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2> Pick your two favorite seasons. </h2>
+        <table>
+            <tr>
+                <td width='120'><input type='checkbox' id='spring' onChange='modcheck(this)'/>Spring</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='lofi' onChange='modcheck(this)'/>Lo-Fi</td>
+                <td width='120'><input type='checkbox' id='summer' onChange='modcheck(this)'/>Summer</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='autumn' onChange='modcheck(this)'/>Autumn</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='winter' onChange='modcheck(this)'/>Winter</td>
             </tr>
         </table>
     </center>
@@ -195,69 +247,6 @@
             <p id="rangeValue">0</p>
         </div>
     </center> 
-</fieldset>
-
-<!--To-do: Ask if this multiselector is correct-->
-
-<fieldset>
-    <center>
-        <h2>Select [x] artists!</h2>
-        <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
-
-        <select name="artists" id="artists" multiple size="13" onChange='modmultiselector(this)'>
-            <option value="icespice">Ice Spice</option>
-            <option value="drake">Drake</option>
-            <option value="bts" >BTS</option>
-            <option value="billycyrus">Billy Cyrus</option>
-            <option value="chrisyoung">Chris Young</option>
-            <option value="petitbiscuit">Petit Biscuit</option>
-            <option value="orchidbae">orchidbae</option>
-            <option value="bonjovi">Bon Jovi</option>
-            <option value="tinaturner">Tina Turner</option>
-            <option value="debussy">Claude Debussy</option>
-            <option value="bach">J.S. Bach</option>
-            <option value="sza">SZA</option>
-            <option value="theweekend">The Weeknd</option>
-
-        </select>
-    </center>
-
-
-</fieldset>
-
-<!-- TO-DO: Ask about getting functionality with radio-->
-
-<fieldset>
-    <center>
-    <div id="wrapper">
-            <h4 for="yes_no_explicit">Is explicit content allowed?</h4>
-
-
-            <input type="radio" id="yesExplicit" name="explicit" value="yes" onchange='modradio(this)'/>
-            <label for="yesExplicit">Yes</label>
-
-            <input type="radio" id="noExplicit" name="explicit" value="no" onchange='modradio(this)' />
-            <label for="noExplicit">No</label>
-    </div>
-
-    
-    </center>
-</fieldset>
-
-
-<fieldset>
-    <center>
-        <div id="wrapper">
-                <h4 for="yes_no_lyrics">Would you like songs with lyrics?</h4>
-
-                <input type="radio" id="yesLyrics" name="lyrics" value="yes" onchange='modradio(this)'/>
-                <label for="yesLyrics">Yes</label>
-
-                <input type="radio" id="noLyrics" name="lyrics" value="no" onchange='modradio(this)' />
-                <label for="noLyrics">No</label>
-             
-        </div>
-    </center>
 </fieldset>
 
 <fieldset>
