@@ -37,37 +37,123 @@
 <img src="spotifylogo.png" alt="Spotify Logo" style="width:178px;height:184;">
 </center>
 
+<!--To Do: ask if mod text works-->
+
 <br>
 <fieldset>
     <center>
-    <h2> Select your mood! </h2>
-    <p id="genre">sleep</p>
-    <div>
-        <input type="range" min="1" max="4" value = "1" oninput="changeValue(this.value)" onChange='modcheck(this)'>     
-        <script>
-           let genre = document.getElementById('genre');
-           function changeValue(newVal) {
-               text = ""
-                if (newVal == 1){
-                    text = "sleep";
-                } else if (newVal == 2){
-                    text = "study";
-                } else if (newVal == 3){
-                    text = "workout";
-                } else {
-                    text = "vibe";
-                }
-                genre.innerText = text;
-           }
-        </script>
-        <div class="ticks">
-          <span class="tick" id ="sleep">sleep</span>
-          <span class="tick" id ="study">study</span>
-          <span class="tick" id ="workout">workout</span>
-          <span class="tick" id="vibe">vibe</span>
-        </div>
+        <h2>Select the age group that best represents yourself:</h2>
+        <select>
+            <option>[0-20]</option>
+            <option>[21-40]</option>
+            <option>[41-60]</option>
+            <option>[61+]</option>
+        </select>
+    </center>
+</fieldset>
 
-      </div>
+
+<fieldset>
+    <center>
+        <h2>What are you creating this playlist for: </h2>
+        <select>
+            <option>party</option>
+            <option>workout</option>
+            <option>study</option>
+            <option>relax</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Are you a morning or night person? </h2>
+        <select>
+            <option>morning</option>
+            <option>night</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Are you more of an introvert or an extrovert </h2>
+        <select>
+            <option>introvert</option>
+            <option>extrovert</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <div>
+        <h2> Select some activities that you like (choose as many as you like) </h2>
+        <table>
+            <tr>
+                <td ><input type='checkbox' id='reading' onChange='modcheck(this)'/>Reading</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='painting' onChange='modcheck(this)'/>Painting</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='drawing' onChange='modcheck(this)'/>Drawing</td>
+            </tr>
+            <tr>
+                <td width='200'><input type='checkbox' id='rockclimbing' onChange='modcheck(this)'/>Rock-Climbing</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='dancing' onChange='modcheck(this)'/>Dancing</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='cooking' onChange='modcheck(this)'/>Cooking</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='walking' onChange='modcheck(this)'/>Going for walks</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='swimming' onChange='modcheck(this)'/>Swimming</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='jogging' onChange='modcheck(this)'/>Jogging</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='videogames' onChange='modcheck(this)'/>Playing Video Games</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='movies' onChange='modcheck(this)'/>Watching Movies</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='traveling' onChange='modcheck(this)'/>Traveling</td>
+            </tr>
+        </table>
+    </div>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Favorite Pizza Toppings? </h2>
+        <select>
+            <option>Veggie</option>
+            <option>Pepperoni</option>
+            <option>Cheese</option>
+            <option>Meat Lovers</option>
+            <option>Hawaiian</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>What is your ideal vacation? </h2>
+        <select>
+            <option>Beach</option>
+            <option>Exploring a new city</option>
+            <option>Hiking and camping</option>
+            <option>Partying</option>
+            <option>Farming</option>
+        </select>
     </center>
 </fieldset>
 
@@ -105,7 +191,7 @@
         <h2>Select your desired playlist length!</h2>
         <div>
             <input type="range" min="1" max="120" value="50" class="slider" id="length"
-                onChange='modcheck(this)' oninput="rangeValue.innerText = this.value">
+                onChange='modtext(this)' oninput="rangeValue.innerText = this.value">
             <p id="rangeValue">0</p>
         </div>
     </center> 
@@ -118,20 +204,20 @@
         <h2>Select [x] artists!</h2>
         <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
 
-        <select name="artists" id="artists" multiple size="13">
-            <option value="icespice" onChange='modmultiselector(this)'>Ice Spice</option>
-            <option value="drake" onChange='modmultiselector(this)'>Drake</option>
-            <option value="bts" onChange='modmultiselector(this)'>BTS</option>
-            <option value="billycyrus" onChange='modmultiselector(this)'>Billy Cyrus</option>
-            <option value="chrisyoung" onChange='modmultiselector(this)'>Chris Young</option>
-            <option value="petitbiscuit" onChange='modmultiselector(this)'>Petit Biscuit</option>
-            <option value="orchidbae" onChange='modmultiselector(this)'>orchidbae</option>
-            <option value="bonjovi" onChange='modmultiselector(this)'>Bon Jovi</option>
-            <option value="tinaturner" onChange='modmultiselector(this)'>Tina Turner</option>
-            <option value="debussy" onChange='modmultiselector(this)'>Claude Debussy</option>
-            <option value="bach" onChange='modmultiselector(this)'>J.S. Bach</option>
-            <option value="sza" onChange='modmultiselector(this)'>SZA</option>
-            <option value="theweekend" onChange='modmultiselector(this)'>The Weeknd</option>
+        <select name="artists" id="artists" multiple size="13" onChange='modmultiselector(this)'>
+            <option value="icespice">Ice Spice</option>
+            <option value="drake">Drake</option>
+            <option value="bts" >BTS</option>
+            <option value="billycyrus">Billy Cyrus</option>
+            <option value="chrisyoung">Chris Young</option>
+            <option value="petitbiscuit">Petit Biscuit</option>
+            <option value="orchidbae">orchidbae</option>
+            <option value="bonjovi">Bon Jovi</option>
+            <option value="tinaturner">Tina Turner</option>
+            <option value="debussy">Claude Debussy</option>
+            <option value="bach">J.S. Bach</option>
+            <option value="sza">SZA</option>
+            <option value="theweekend">The Weeknd</option>
 
         </select>
     </center>
@@ -229,21 +315,24 @@ Prerequisites:<br/>
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
 
+
 %%% Genres %%%
 
-value(hiphop, false)
+value(hiphop, true)
 value(country, false)
 value(rock, false)
 value(classical, false)
 value(rb, false)
 value(lofi, false)
 
-%%% Mood %%%
+valuelist(artists, list)
 
-value(sleep, false)
-value(study, false)
-value(workout, false)
-value(vibe, false)
+%%% Mood and Length %%%
+
+select(mood, X) :: value(mood, X) 
+select(mood, X) :: value(mood, Y) ==> ~value(mood, Y)
+
+value(length, 1)
 
 %%% Artists %%% 
 
