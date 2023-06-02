@@ -40,61 +40,144 @@
 <br>
 <fieldset>
     <center>
-    <h2> Select your mood! </h2>
-    <p id="genre">sleep</p>
-    <div>
-        <input type="range" min="1" max="4" value = "1" oninput="changeValue(this.value)" onChange='modcheck(this)'>     
-        <script>
-           let genre = document.getElementById('genre');
-           function changeValue(newVal) {
-               text = ""
-                if (newVal == 1){
-                    text = "sleep";
-                } else if (newVal == 2){
-                    text = "study";
-                } else if (newVal == 3){
-                    text = "workout";
-                } else {
-                    text = "vibe";
-                }
-                genre.innerText = text;
-           }
-        </script>
-        <div class="ticks">
-          <span class="tick" id ="sleep">sleep</span>
-          <span class="tick" id ="study">study</span>
-          <span class="tick" id ="workout">workout</span>
-          <span class="tick" id="vibe">vibe</span>
-        </div>
+        <h2>Select your age group:</h2>
+        <select id='age' onchange='modselector(this)'>
+            <option>0-20</option>
+            <option>21-40</option>
+            <option>41-60</option>
+            <option>61+</option>
+        </select>
+    </center>
+</fieldset>
 
-      </div>
+
+<fieldset>
+    <center>
+        <h2>Select a ~vibe~ for your playlist:</h2>
+        <select id='vibe' onchange='modselector(this)'>
+            <option>party</option>
+            <option>workout</option>
+            <option>study</option>
+            <option>relax</option>
+        </select>
     </center>
 </fieldset>
 
 <fieldset>
     <center>
-        <h2> Select [x] genres you want! </h2>
+        <h2>Are you more of a morning or night person?</h2>
+        <select id='timeofday' onchange='modselector(this)'>
+            <option>morning</option>
+            <option>night</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <div>
+        <h2> Select some activities that you enjoy (choose as many as you like): </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='popmusic' onChange='modcheck(this)'/>Pop</td>
+                <td><input type='checkbox' id='activity(reading)' onchange='modcheck(this)'/>Reading</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='hiphop' onChange='modcheck(this)'/>Hip-Hop</td>
+                <td><input type='checkbox' id='activity(painting)' onchange='modcheck(this)'/>Painting</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='country' onChange='modcheck(this)'/>Country</td>
+                <td><input type='checkbox' id='activity(drawing)' onchange='modcheck(this)'/>Drawing</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='rock' onChange='modcheck(this)'/>Rock</td>
+                <td><input type='checkbox' id='activity(rockclimbing)' onchange='modcheck(this)'/>Rock Climbing</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='classical' onChange='modcheck(this)'/>Classical</td>
+                <td><input type='checkbox' id='activity(dancing)' onchange='modcheck(this)'/>Dancing</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='rb' onChange='modcheck(this)'/>R&B</td>
+                <td><input type='checkbox' id='activity(cooking)' onchange='modcheck(this)'/>Cooking</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='lofi' onChange='modcheck(this)'/>Lo-Fi</td>
+                <td><input type='checkbox' id='activity(walking)' onchange='modcheck(this)'/>Going for walks</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' id='activity(swimming)' onchange='modcheck(this)'/>Swimming</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' id='activity(jogging)' onchange='modcheck(this)'/>Jogging</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' id='activity(videogames)' onchange='modcheck(this)'/>Playing Video Games</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' id='activity(movies)' onchange='modcheck(this)'/>Watching Movies</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' id='activity(traveling)' onchange='modcheck(this)'/>Traveling</td>
+            </tr>
+        </table>
+    </div>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Do you enjoy singing along to music? </h2>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </center>
+</fieldset>
+
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>Favorite Pizza Toppings? </h2>
+        <select>
+            <option>Veggie</option>
+            <option>Pepperoni</option>
+            <option>Cheese</option>
+            <option>Meat Lovers</option>
+            <option>Hawaiian</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2>What is your ideal vacation? </h2>
+        <select>
+            <option>Beach</option>
+            <option>Exploring a new city</option>
+            <option>Hiking and camping</option>
+            <option>Partying</option>
+            <option>Farming</option>
+        </select>
+    </center>
+</fieldset>
+
+<fieldset>
+    <center>
+        <h2> What are your favorite movie genres? (choose as many) </h2>
+        <table>
+            <tr>
+                <td width='120'><input type='checkbox' id='thriller' onChange='modcheck(this)'/>Thriller</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='comedy' onChange='modcheck(this)'/>Comedy</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='action' onChange='modcheck(this)'/>Action</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='romcom' onChange='modcheck(this)'/>Rom-Com</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='horror' onChange='modcheck(this)'/>Horror</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='drama' onChange='modcheck(this)'/>Drama</td>
             </tr>
         </table>
     </center>
@@ -102,70 +185,21 @@
 
 <fieldset>
     <center>
-        <h2>Select your desired playlist length!</h2>
-        <div>
-            <input type="range" min="1" max="120" value="50" class="slider" id="length"
-                onChange='modcheck(this)' oninput="rangeValue.innerText = this.value">
-            <p id="rangeValue">0</p>
-        </div>
-    </center> 
-</fieldset>
-
-
-<fieldset>
-    <center>
-        <h2>Select [x] artists!</h2>
-        <h4>You may control-click (Windows) or command-click (Mac) to select more than one.</h4>
-
-        <select name="artists" id="artists" multiple size="13">
-            <option value="icespice">Ice Spice</option>
-            <option value="drake">Drake</option>
-            <option value="bts">BTS</option>
-            <option value="billycyrus">Billy Cyrus</option>
-            <option value="chrisyoung">Chris Young</option>
-            <option value="petitbiscuit">Petit Biscuit</option>
-            <option value="orchidbae">orchidbae</option>
-            <option value="bonjovi">Bon Jovi</option>
-            <option value="tinaturner">Tina Turner</option>
-            <option value="bach">Claude Debussy</option>
-            <option value="debussy">Johann Bach</option>
-            <option value="sza">SZA</option>
-            <option value="theweekend">The Weeknd</option>
-
-        </select>
-    </center>
-
-
-</fieldset>
-
-
-<fieldset>
-    <center>
-    <div id="wrapper">
-            <h4 for="yes_no_explicit">Is explicit content allowed?</h4>
-          <p>
-            <input type="radio" name="yes_no" id="yexplicit">Yes</input>
-          </p>
-          <p>
-            <input type="radio" name="yes_no" id="nexplicit">No</input>
-          </p>
-    </div>
-
-    
-    </center>
-</fieldset>
-
-<fieldset>
-    <center>
-        <div id="wrapper">
-                <h4 for="yes_no_lyrics">Would you like songs with lyrics?</h4>
-              <p>
-                <input type="radio" name="yes_no" id="yes_lyrics" onChange='modcheck(this)'>Yes</input>
-              </p>
-              <p>
-                <input type="radio" name="yes_no" id="no_lyrics" onChange='modcheck(this)'>No</input>
-              </p>
-        </div>
+        <h2> Pick your two favorite seasons. </h2>
+        <table>
+            <tr>
+                <td width='120'><input type='checkbox' id='spring' onChange='modcheck(this)'/>Spring</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='summer' onChange='modcheck(this)'/>Summer</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='autumn' onChange='modcheck(this)'/>Autumn</td>
+            </tr>
+            <tr>
+                <td width='120'><input type='checkbox' id='winter' onChange='modcheck(this)'/>Winter</td>
+            </tr>
+        </table>
     </center>
 </fieldset>
 
@@ -224,27 +258,7 @@ Prerequisites:<br/>
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
 
-%%% Genres %%%
-
-value(hiphop, false)
-value(country, false)
-value(rock, false)
-value(classical, false)
-value(rb, false)
-value(lofi, false)
-
-%%% Mood %%%
-
-value(sleep, false)
-value(study, false)
-value(workout, false)
-value(vibe, false)
-
-
-%%% Radio %%%
-
-
-%%%%%%%%%%%
+<!-- %%%%%%%%%%%
 RAP SONGS
 %%%%%%%%%%%
 song(All My Life, Lil Durk, Rap, Yes, 223, 28041004, Yes, English, Link, No)
@@ -390,7 +404,31 @@ song(Distance, Kayo Genesis, R&B, Yes, 145, 3410467, Yes, English, Link, No)
 song(Airplane Mode, Klang, R&B, No, 172, 112268, Yes, Korean, Link, No)
 song(Attention, NewJeans, R&B, No, 235, 234919381, Yes, Korean, Link, No)
 song(ONLY, Lee Hi, R&B, No, 240, 203457333, Yes, Korean, Link, No)
-song(Bambi, BAEKHYUN, R&B, No, 213, 56841295, Yes, Korean, Link, No)
+song(Bambi, BAEKHYUN, R&B, No, 213, 56841295, Yes, Korean, Link, No) -->
+
+%%% Age %%%
+value(age,0-20)
+
+%%% Vibe %%%
+value(vibe,party)
+
+%%% Time of Day %%%
+value(timeofday,morning)
+
+%%% Activities %%%
+value(activity(reading),false)
+value(activity(painting),false)
+value(activity(drawing),false)
+value(activity(rockclimbing),false)
+value(activity(dancing),false)
+value(activity(cooking),false)
+value(activity(walking),false)
+value(activity(swimming),false)
+value(activity(jogging),false)
+value(activity(videogames),false)
+value(activity(movies),false)
+value(activity(traveling),false)
+
 </dataset>
 
 <!--=======================================================================-->
@@ -403,60 +441,35 @@ song(Bambi, BAEKHYUN, R&B, No, 213, 56841295, Yes, Korean, Link, No)
 
 
 <ruleset id='library' style='font-family:courier;display:none' rows='20'>
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-course(X) :- value(X, Y)
-
-
-theory(cs154)
-theory(cs157)
-theory(cs161)
-theory(cs254)
-
-
-prereq(cs109, cs229)
-prereq(cs145, cs345)
-prereq(cs154, cs254)
-prereq(cs157, cs227)
-prereq(cs157, cs345)
+isactivity(reading)
+isactivity(painting)
+isactivity(drawing)
+isactivity(rockclimbing)
+isactivity(dancing)
+isactivity(cooking)
+isactivity(walking)
+isactivity(swimming)
+isactivity(jogging)
+isactivity(videogames)
+isactivity(movies)
+isactivity(traveling)
 
 
-satisfied(discretemath) :- value(cs103, true)
+select(age,X) :: value(age,Y) ==> value(age,X) & ~value(age,Y)
+select(vibe,X) :: value(vibe,Y) ==> value(vibe,X) & ~value(vibe,Y)
+select(timeofday,X) :: value(timeofday,Y) ==> value(timeofday,X) & ~value(timeofday,Y)
+select(personality,X) :: value(personality,Y) ==> value(personality,X) & ~value(personality,Y)
 
+select(activity(reading),Y) :: value(activity(reading),Z) ==> value(activity(reading),Y) & ~value(activity(reading),Z)
+select(activity(painting),Y) :: value(activity(painting),Z) ==> value(activity(painting),Y) & ~value(activity(painting),Z)
+select(activity(drawing),Y) :: value(activity(drawing),Z) ==> value(activity(drawing),Y) & ~value(activity(drawing),Z)
+select(activity(X),Y) :: value(activity(X),Z) ==> value(activity(X),Y) & ~value(activity(X),Z)
 
-satisfied(theory) :- theory(X) & value(X, true)
-
-
-satisfied(problogic) :- value(cs109, true)
-satisfied(problogic) :- value(cs157, true)
-
-
-satisfied(fivecourses) :- countofall(X, value(X, true), C) & min(C, 5, 5)
-
-
-unsatisfied(prerequisites) :- prereq(X, Y) & value(Y, true) & value(X, false)
-satisfied(prerequisites) :- ~unsatisfied(prerequisites)
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-style(R,color,red) :- req(R) & ~satisfied(R)
-style(R,color,black) :- req(R) & satisfied(R)
-
-
-req(discretemath)
-req(theory)
-req(problogic)
-req(fivecourses)
-req(prerequisites)
-
-
-
-
-select(X,true) :: ~value(X,false) & value(X,true)
-select(X,false) :: ~value(X,true) & value(X,false)
 </ruleset>
 
 
