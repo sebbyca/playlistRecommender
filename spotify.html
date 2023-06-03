@@ -6,8 +6,8 @@
 
  <head>
    <title>Playlist Generator</title>
-   <script type='text/javascript' src='http://epilog.stanford.edu/javascript/epilog.js'></script>
-   <script type='text/javascript' src='http://worksheets.stanford.edu/javascript/worksheets.js'></script>
+   <script type='text/javascript' src='./epilog.js'></script>
+   <script type='text/javascript' src='./worksheets.js'></script>
    <link rel="stylesheet" href="styles.css">
    <script></script>
  </head>
@@ -42,10 +42,10 @@
     <center>
         <h2>Select your age group:</h2>
         <select id='age' onchange='modselector(this)'>
-            <option>0-20</option>
-            <option>21-40</option>
-            <option>41-60</option>
-            <option>61+</option>
+            <option value="0-20">[0-20]</option>
+            <option value="21-40">[21-40]</option>
+            <option value="41-60">[41-60]</option>
+            <option value="61+">[61+]</option>
         </select>
     </center>
 </fieldset>
@@ -55,10 +55,10 @@
     <center>
         <h2>Select a ~vibe~ for your playlist:</h2>
         <select id='vibe' onchange='modselector(this)'>
-            <option>party</option>
-            <option>workout</option>
-            <option>study</option>
-            <option>relax</option>
+            <option value="party">Party</option>
+            <option value="workout">Workout</option>
+            <option value="study">Study</option>
+            <option value="relax">Relax</option>
         </select>
     </center>
 </fieldset>
@@ -67,15 +67,14 @@
     <center>
         <h2>Are you more of a morning or night person?</h2>
         <select id='timeofday' onchange='modselector(this)'>
-            <option>morning</option>
-            <option>night</option>
+            <option value="morning">Morning</option>
+            <option value="night">Night</option>
         </select>
     </center>
 </fieldset>
 
 <fieldset>
     <center>
-        <div>
         <h2> Select some activities that you enjoy (choose as many as you like): </h2>
         <table>
             <tr>
@@ -122,9 +121,9 @@
 <fieldset>
     <center>
         <h2>Do you enjoy singing along to music? </h2>
-        <select>
-            <option>Yes</option>
-            <option>No</option>
+        <select id='singing' onchange='modselector(this)'>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
         </select>
     </center>
 </fieldset>
@@ -134,12 +133,12 @@
 <fieldset>
     <center>
         <h2>Favorite Pizza Toppings? </h2>
-        <select>
-            <option>Veggie</option>
-            <option>Pepperoni</option>
-            <option>Cheese</option>
-            <option>Meat Lovers</option>
-            <option>Hawaiian</option>
+        <select id='pizza' onchange='modselector(this)'>
+            <option value="veggie">Veggie</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="cheese">Cheese</option>
+            <option value="meatlovers">Meat Lovers</option>
+            <option value="hawaiian">Hawaiian</option>
         </select>
     </center>
 </fieldset>
@@ -147,12 +146,12 @@
 <fieldset>
     <center>
         <h2>What is your ideal vacation? </h2>
-        <select>
-            <option>Beach</option>
-            <option>Exploring a new city</option>
-            <option>Hiking and camping</option>
-            <option>Partying</option>
-            <option>Farming</option>
+        <select id='vacation' onchange='modselector(this)'>
+            <option value="beach">Beach</option>
+            <option value="city">Exploring a New City</option>
+            <option value="hiking">Hiking and Camping</option>
+            <option value="party">Partying</option>
+            <option value="farm">Farming</option>
         </select>
     </center>
 </fieldset>
@@ -162,22 +161,22 @@
         <h2> What are your favorite movie genres? (choose as many) </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='thriller' onChange='modcheck(this)'/>Thriller</td>
+                <td><input type='checkbox' id='movie(thriller)' onchange='modcheck(this)'/>Thriller</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='comedy' onChange='modcheck(this)'/>Comedy</td>
+                <td><input type='checkbox' id='movie(comedy)' onchange='modcheck(this)'/>Comedy</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='action' onChange='modcheck(this)'/>Action</td>
+                <td><input type='checkbox' id='movie(action)' onchange='modcheck(this)'/>Action</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='romcom' onChange='modcheck(this)'/>Rom-Com</td>
+                <td><input type='checkbox' id='movie(romcom)' onchange='modcheck(this)'/>Rom-Com</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='horror' onChange='modcheck(this)'/>Horror</td>
+                <td><input type='checkbox' id='movie(horror)' onchange='modcheck(this)'/>Horror</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='drama' onChange='modcheck(this)'/>Drama</td>
+                <td><input type='checkbox' id='movie(drama)' onchange='modcheck(this)'/>Drama</td>
             </tr>
         </table>
     </center>
@@ -188,16 +187,16 @@
         <h2> Pick your two favorite seasons. </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='spring' onChange='modcheck(this)'/>Spring</td>
+                <td><input type='checkbox' id='season(spring)' onchange='modcheck(this)'/>Spring</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='summer' onChange='modcheck(this)'/>Summer</td>
+                <td><input type='checkbox' id='season(summer)' onchange='modcheck(this)'/>Summer</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='autumn' onChange='modcheck(this)'/>Autumn</td>
+                <td><input type='checkbox' id='season(autumn)' onchange='modcheck(this)'/>Autumn</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='winter' onChange='modcheck(this)'/>Winter</td>
+                <td><input type='checkbox' id='season(winter)' onchange='modcheck(this)'/>Winter</td>
             </tr>
         </table>
     </center>
@@ -429,6 +428,29 @@ value(activity(videogames),false)
 value(activity(movies),false)
 value(activity(traveling),false)
 
+%%% Singing %%%
+value(singing,yes)
+
+%%% Pizza Topping %%%
+value(pizza,veggie)
+
+%%% Vacation %%%
+value(vacation,beach)
+
+%%% Movies %%%
+value(movie(thriller),false)
+value(movie(comedy),false)
+value(movie(action),false)
+value(movie(romcom),false)
+value(movie(horror),false)
+value(movie(drama),false)
+
+%%% Seasons %%%
+value(season(spring),false)
+value(season(summer),false)
+value(season(autumn),false)
+value(season(winter),false)
+
 </dataset>
 
 <!--=======================================================================-->
@@ -446,29 +468,15 @@ value(activity(traveling),false)
 %%% Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-isactivity(reading)
-isactivity(painting)
-isactivity(drawing)
-isactivity(rockclimbing)
-isactivity(dancing)
-isactivity(cooking)
-isactivity(walking)
-isactivity(swimming)
-isactivity(jogging)
-isactivity(videogames)
-isactivity(movies)
-isactivity(traveling)
-
-
 select(age,X) :: value(age,Y) ==> value(age,X) & ~value(age,Y)
 select(vibe,X) :: value(vibe,Y) ==> value(vibe,X) & ~value(vibe,Y)
 select(timeofday,X) :: value(timeofday,Y) ==> value(timeofday,X) & ~value(timeofday,Y)
-select(personality,X) :: value(personality,Y) ==> value(personality,X) & ~value(personality,Y)
-
-select(activity(reading),Y) :: value(activity(reading),Z) ==> value(activity(reading),Y) & ~value(activity(reading),Z)
-select(activity(painting),Y) :: value(activity(painting),Z) ==> value(activity(painting),Y) & ~value(activity(painting),Z)
-select(activity(drawing),Y) :: value(activity(drawing),Z) ==> value(activity(drawing),Y) & ~value(activity(drawing),Z)
 select(activity(X),Y) :: value(activity(X),Z) ==> value(activity(X),Y) & ~value(activity(X),Z)
+select(singing,X) :: value(singing,Y) ==> value(singing,X) & ~value(singing,Y)
+select(pizza,X) :: value(pizza,Y) ==> value(pizza,X) & ~value(pizza,Y)
+select(vacation,X) :: value(vacation,Y) ==> value(vacation,X) & ~value(vacation,Y)
+select(movie(X),Y) :: value(movie(X),Z) ==> value(movie(X),Y) & ~value(movie(X),Z)
+select(season(X),Y) :: value(season(X),Z) ==> value(season(X),Y) & ~value(season(X),Z)
 
 </ruleset>
 
