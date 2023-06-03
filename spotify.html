@@ -42,6 +42,7 @@
     <center>
         <h2>Select your age group:</h2>
         <select id='age' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="0-20">[0-20]</option>
             <option value="21-40">[21-40]</option>
             <option value="41-60">[41-60]</option>
@@ -55,6 +56,7 @@
     <center>
         <h2>Select a ~vibe~ for your playlist:</h2>
         <select id='vibe' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="party">Party</option>
             <option value="workout">Workout</option>
             <option value="study">Study</option>
@@ -67,6 +69,7 @@
     <center>
         <h2>Are you more of a morning or night person?</h2>
         <select id='timeofday' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="morning">Morning</option>
             <option value="night">Night</option>
         </select>
@@ -107,6 +110,7 @@
     <center>
         <h2>Do you enjoy singing along to music? </h2>
         <select id='singing' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
         </select>
@@ -119,6 +123,7 @@
     <center>
         <h2>Favorite Pizza Toppings? </h2>
         <select id='pizza' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="veggie">Veggie</option>
             <option value="pepperoni">Pepperoni</option>
             <option value="cheese">Cheese</option>
@@ -132,6 +137,7 @@
     <center>
         <h2>What is your ideal vacation? </h2>
         <select id='vacation' onchange='modselector(this)'>
+            <option value="undefined"></option>
             <option value="beach">Beach</option>
             <option value="city">City</option>
             <option value="camping">Camping</option>
@@ -201,7 +207,31 @@
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
 
-
+<!-- value(song("Cloud Bossa","Jazzinuf",lofi,no,156,2186639,no,none),no)
+value(song("Tea Time","Hippo Dreams",lofi,no,96,270198,no,none),no)
+value(song("Sunsets","Aso",lofi,no,177,18240462,no,none),yes)
+value(song("Tiramisu","Sova",lofi,no,165,17245,no,none),no)
+value(song("Quiet","Aisake",lofi,no,120,13788,no,none),no)
+value(song("Landslide","Fleetwood Mac",rock,no,199,548119431,yes,english),yes)
+value(song("Die for You","The Weekend",rb,no,260,1514741219,yes,english),yes)
+value(song("Fast Car","Luke Combs",country,no,265,69843523,yes,english),yes)
+value(song("Clair de Lune","Claude Debussy",classical,no,290,101693056,no,none),yes)
+value(song("The Best","Tina Turner",rock,no,329,196916883,yes,english),yes)
+value(song("Money","Pink Floyd",rock,yes,382,426023156,yes,english),yes)
+value(song("Rich Flex","Drake",rap,yes,239,506359284,yes,english),yes)
+value(song("One Dance","Drake",rap,no,173,2644054022,yes,english),yes)
+value(song("Views","Drake",rap,yes,311,87960196,yes,english),yes)
+value(song("Hotline Bling","Drake",rap,no,267,1192741458,yes,english),yes)
+value(song("Cupid Twin Ver","Fifty Fifty",pp,no,174,273981595,yes,korean),yes)
+value(song("Reflections","Toshifumi Hinata",classical,no,130,66436015,no,none),yes)
+value(song("Creepin","Metro Boomin",rap,yes,221,694189985,yes,english),yes)
+value(song("Kill Bill","SZA",rb,no,153,963178796,yes,english),yes)
+value(song("Drink In My Hand","Eric Church",country,no,191,237598665,yes,english),yes)
+value(song("Last Night","Morgan Wallen",country,yes,163,286449038,yes,english),yes)
+value(song("Flowers","Miley Cyrus",pp,no,200,1086622688,yes,english),yes)
+value(song("Sofia","Alvaro Soler",pp,no,210,302951123,yes,spanish),yes)
+value(song("All My Life","Lil Durk",rap,yes,223,28041004,yes,english),yes) -->
+    
 value(song("Creepin", "Metro Boomin", rap, yes, 221, 694189985, yes, english), no)
 value(song("All My Life", "Lil Durk", rap, yes, 223, 28041004, yes, english), no)
 value(song("Favorite Song", "Toosi", rap, no, 208, 70819504, yes, english), no)
@@ -355,13 +385,13 @@ value(song("Bambi", "BAEKHYUN", rb, no, 213, 56841295, yes, korean), no)
     
 
 %%% Age %%%
-value(age,0-20)
+value(age,undefined)
 
 %%% Vibe %%%
-value(vibe,party)
+value(vibe,undefined)
 
 %%% Time of Day %%%
-value(timeofday,morning)
+value(timeofday,undefined)
 
 %%% Activities %%%
 value(activity(reading),false)
@@ -379,13 +409,13 @@ value(activity(traveling),false)
 value(activity(hiking),false)
 
 %%% Singing %%%
-value(singing,yes)
+value(singing,undefined)
 
 %%% Pizza Topping %%%
-value(pizza,veggie)
+value(pizza,undefined)
 
 %%% Vacation %%%
-value(vacation,beach)
+value(vacation,undefined)
 
 %%% Movies %%%
 value(movie(thriller),false)
@@ -720,9 +750,8 @@ select(movie(X),Y) :: value(movie(X),Z) ==> value(movie(X),Y) & ~value(movie(X),
 select(season(X),Y) :: value(season(X),Z) ==> value(season(X),Y) & ~value(season(X),Z) &
     season(season(X))
 
-
-click(generate)  ::  value(X, yes) ==> 
-    style(playlist, "display", inline) & innerhtml(playlist, X)
+click(generate) :: evaluate(setofall(X,value(X, yes)), Y) & evaluate(stringifyall(Y),Z) ==> 
+    style(playlist, "display", inline) & innerhtml(playlist, Z)
     
 </ruleset>
 
