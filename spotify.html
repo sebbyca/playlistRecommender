@@ -6,8 +6,8 @@
 
  <head>
    <title>Playlist Generator</title>
-   <script type='text/javascript' src='http://epilog.stanford.edu/javascript/epilog.js'></script>
-   <script type='text/javascript' src='http://worksheets.stanford.edu/javascript/worksheets.js'></script>
+   <script type='text/javascript' src='./epilog.js'></script>
+   <script type='text/javascript' src='./worksheets.js'></script>
    <link rel="stylesheet" href="styles.css">
    <script></script>
  </head>
@@ -42,10 +42,10 @@
     <center>
         <h2>Select your age group:</h2>
         <select id='age' onchange='modselector(this)'>
-            <option>0-20</option>
-            <option>21-40</option>
-            <option>41-60</option>
-            <option>61+</option>
+            <option value="0-20">[0-20]</option>
+            <option value="21-40">[21-40]</option>
+            <option value="41-60">[41-60]</option>
+            <option value="61+">[61+]</option>
         </select>
     </center>
 </fieldset>
@@ -55,10 +55,10 @@
     <center>
         <h2>Select a ~vibe~ for your playlist:</h2>
         <select id='vibe' onchange='modselector(this)'>
-            <option>party</option>
-            <option>workout</option>
-            <option>study</option>
-            <option>relax</option>
+            <option value="party">Party</option>
+            <option value="workout">Workout</option>
+            <option value="study">Study</option>
+            <option value="relax">Relax</option>
         </select>
     </center>
 </fieldset>
@@ -67,15 +67,14 @@
     <center>
         <h2>Are you more of a morning or night person?</h2>
         <select id='timeofday' onchange='modselector(this)'>
-            <option>morning</option>
-            <option>night</option>
+            <option value="morning">Morning</option>
+            <option value="night">Night</option>
         </select>
     </center>
 </fieldset>
 
 <fieldset>
     <center>
-        <div>
         <h2> Select some activities that you enjoy (choose as many as you like): </h2>
         <table>
             <tr>
@@ -85,28 +84,13 @@
                 <td><input type='checkbox' id='activity(painting)' onchange='modcheck(this)'/>Painting</td>
             </tr>
             <tr>
-                <td><input type='checkbox' id='activity(drawing)' onchange='modcheck(this)'/>Drawing</td>
-            </tr>
-            <tr>
-                <td><input type='checkbox' id='activity(rockclimbing)' onchange='modcheck(this)'/>Rock Climbing</td>
-            </tr>
-            <tr>
                 <td><input type='checkbox' id='activity(dancing)' onchange='modcheck(this)'/>Dancing</td>
             </tr>
             <tr>
                 <td><input type='checkbox' id='activity(cooking)' onchange='modcheck(this)'/>Cooking</td>
             </tr>
             <tr>
-                <td><input type='checkbox' id='activity(walking)' onchange='modcheck(this)'/>Going for walks</td>
-            </tr>
-            <tr>
-                <td><input type='checkbox' id='activity(swimming)' onchange='modcheck(this)'/>Swimming</td>
-            </tr>
-            <tr>
-                <td><input type='checkbox' id='activity(jogging)' onchange='modcheck(this)'/>Jogging</td>
-            </tr>
-            <tr>
-                <td><input type='checkbox' id='activity(videogames)' onchange='modcheck(this)'/>Playing Video Games</td>
+                <td><input type='checkbox' id='activity(hiking)' onchange='modcheck(this)'/>Hiking</td>
             </tr>
             <tr>
                 <td><input type='checkbox' id='activity(movies)' onchange='modcheck(this)'/>Watching Movies</td>
@@ -122,9 +106,9 @@
 <fieldset>
     <center>
         <h2>Do you enjoy singing along to music? </h2>
-        <select>
-            <option>Yes</option>
-            <option>No</option>
+        <select id='singing' onchange='modselector(this)'>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
         </select>
     </center>
 </fieldset>
@@ -134,12 +118,12 @@
 <fieldset>
     <center>
         <h2>Favorite Pizza Toppings? </h2>
-        <select>
-            <option>Veggie</option>
-            <option>Pepperoni</option>
-            <option>Cheese</option>
-            <option>Meat Lovers</option>
-            <option>Hawaiian</option>
+        <select id='pizza' onchange='modselector(this)'>
+            <option value="veggie">Veggie</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="cheese">Cheese</option>
+            <option value="mushroom">Mushrooms</option>
+            <option value="hawaiian">Hawaiian</option>
         </select>
     </center>
 </fieldset>
@@ -147,12 +131,11 @@
 <fieldset>
     <center>
         <h2>What is your ideal vacation? </h2>
-        <select>
-            <option>Beach</option>
-            <option>Exploring a new city</option>
-            <option>Hiking and camping</option>
-            <option>Partying</option>
-            <option>Farming</option>
+        <select id='vacation' onchange='modselector(this)'>
+            <option value="beach">Beach</option>
+            <option value="city">City</option>
+            <option value="camping">Camping</option>
+            <option value="farm">Farming</option>
         </select>
     </center>
 </fieldset>
@@ -162,22 +145,22 @@
         <h2> What are your favorite movie genres? (choose as many) </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='thriller' onChange='modcheck(this)'/>Thriller</td>
+                <td><input type='checkbox' id='movie(thriller)' onchange='modcheck(this)'/>Thriller</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='comedy' onChange='modcheck(this)'/>Comedy</td>
+                <td><input type='checkbox' id='movie(comedy)' onchange='modcheck(this)'/>Comedy</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='action' onChange='modcheck(this)'/>Action</td>
+                <td><input type='checkbox' id='movie(action)' onchange='modcheck(this)'/>Action</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='romcom' onChange='modcheck(this)'/>Rom-Com</td>
+                <td><input type='checkbox' id='movie(romcom)' onchange='modcheck(this)'/>Rom-Com</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='horror' onChange='modcheck(this)'/>Horror</td>
+                <td><input type='checkbox' id='movie(horror)' onchange='modcheck(this)'/>Horror</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='drama' onChange='modcheck(this)'/>Drama</td>
+                <td><input type='checkbox' id='movie(drama)' onchange='modcheck(this)'/>Drama</td>
             </tr>
         </table>
     </center>
@@ -188,16 +171,16 @@
         <h2> Pick your two favorite seasons. </h2>
         <table>
             <tr>
-                <td width='120'><input type='checkbox' id='spring' onChange='modcheck(this)'/>Spring</td>
+                <td><input type='checkbox' id='season(spring)' onchange='modcheck(this)'/>Spring</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='summer' onChange='modcheck(this)'/>Summer</td>
+                <td><input type='checkbox' id='season(summer)' onchange='modcheck(this)'/>Summer</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='autumn' onChange='modcheck(this)'/>Autumn</td>
+                <td><input type='checkbox' id='season(fall)' onchange='modcheck(this)'/>Fall</td>
             </tr>
             <tr>
-                <td width='120'><input type='checkbox' id='winter' onChange='modcheck(this)'/>Winter</td>
+                <td><input type='checkbox' id='season(winter)' onchange='modcheck(this)'/>Winter</td>
             </tr>
         </table>
     </center>
@@ -205,206 +188,166 @@
 
 <fieldset>
     <center>
-        <button>Generate Playlist</button>
+        <button id='generate' onclick='modbutton(this)'>Generate Playlist</button>
     </center>
 </fieldset>
-
-
-
-
-
-
-<br/>
-<fieldset>
- <table width='100%'>
-   <tr>
-     <td width='30%'>
-Requirements:<br/>
-<div id='discretemath' style='color:red'>&nbsp;&nbsp;CS 103 required.</div>
-<div id='theory' style='color:red'>&nbsp;&nbsp;One theoretical course.</div>
-<div id='problogic' style='color:red'>&nbsp;&nbsp;CS 109 or CS157.</div>
-<div id='prerequisites' style='color:red'>&nbsp;&nbsp;Prerequisites satisfied.</div>
-<div id='fivecourses' style='color:red'>&nbsp;&nbsp;At least five courses.</div>
-   </td>
-   <td valign='top'>
-Theory Courses:<br/>
-&nbsp;&nbsp;CS 154<br/>
-&nbsp;&nbsp;CS 157<br/>
-&nbsp;&nbsp;CS 161<br/>
-&nbsp;&nbsp;CS 254<br/>
-   </td>
-   <td width='50%' valign='top'>
-Prerequisites:<br/>
-&nbsp;&nbsp;CS 109 is a prerequisite for CS 229<br/>
-&nbsp;&nbsp;CS 145 is a prerequisite for CS 345<br/>
-&nbsp;&nbsp;CS 154 is a prerequisite for CS 254<br/>
-&nbsp;&nbsp;CS 157 is a prerequisite for CS 227<br/>
-&nbsp;&nbsp;CS 157 is a prerequisite for CS 345<br/>
-   </td>
- </tr>
-</table>
-   </fieldset>
-
-
-       </td>
-     </tr>
-   </table>
- </center>
- <br/>
-
 
 <!--=======================================================================-->
 
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
 
-<!-- %%%%%%%%%%%
-RAP SONGS
-%%%%%%%%%%%
-song(All My Life, Lil Durk, Rap, Yes, 223, 28041004, Yes, English, Link, No)
-song(Creepin, Metro Boomin, Rap, Yes, 221, 694189985, Yes, English, Link, No)
-song(Favorite Song, Toosi, Rap, No, 208, 70819504, Yes, English, Link, No)
-song(Princess Diana, Ice Spice, Rap, Yes, 172, 52703036, Yes, English, Link, No)
-song(Rich Flex, Drake, Rap, Yes, 239,506359284, Yes, English, Link, No)
-song(Low Down, Lil Baby, Rap, Yes, 144, 104934035, Yes, English, Link, No)
-song(One Dance, Drake, Rap, No, 173, 2644054022, Yes, English, Link, No)
-song(Views, Drake, Rap, Yes, 311, 87960196, Yes, English, Link, No)
-song(Hotline Bling, Drake, Rap, No, 267, 1192741458, Yes, English, Link, No)
-song(The Spins, Mac Miller, Rap, Yes, 195, 445220378, Yes, English, Link, No)
-song(Over Now, Post Malone, Rap, Yes, 246, 312654320, Yes, English, Link, No)
-song(Blame It On Me, Post Malone, Rap, Yes, 261, 199907452, Yes, English, Link, No)
-song(METEOR, Changmo, Rap, No, 197, 9213497, Yes, Korean, Link, No)
-song(Holy God, Changmo, Rap, No, 139, 1211667, Yes, Korean, Link, No)
-song(Spirit Animal, Jessi, Rap, No, 180, 4142572, Yes, Korean, Link, No)
+value(song("Creepin", "Metro Boomin", rap, yes, 221, 694189985, yes, english), no)
+value(song("All My Life", "Lil Durk", rap, yes, 223, 28041004, yes, english), no)
+value(song("Favorite Song", "Toosi", rap, no, 208, 70819504, yes, english), no)
+value(song("Princess Diana", "Ice Spice", rap, yes, 172, 52703036, yes, english), no)
+value(song("Rich Flex", "Drake", rap, yes, 239,506359284, yes, english),no)
+value(song("Low Down", "Lil Baby", rap, yes, 144, 104934035, yes, english),no)
+value(song("One Dance", "Drake", rap, no, 173, 2644054022, yes, english),no)
+value(song("Views", "Drake", rap, yes, 311, 87960196, yes, english),no)
+value(song("Hotline Bling", "Drake", rap, no, 267, 1192741458, yes, english),no)
+value(song("The Spins", "Mac Miller", rap, yes, 195, 445220378, yes, english), no)
+value(song("Over Now", "Post Malone", rap, yes, 246, 312654320, yes, english), no)
+value(song("Blame It On Me", "Post Malone", rap, yes, 261, 199907452, yes, english), no)
+value(song("METEOR", "Changmo", rap, no, 197, 9213497, yes, korean), no)
+value(song("Holy God", "Changmo", rap, no, 139, 1211667, yes, korean), no)
+value(song("Spirit Animal", "Jessi", rap, no, 180, 4142572, yes, korean), no)
+
 
 %%%%%%%%%%%%
 POP SONGS
 %%%%%%%%%%%%
-song(Sofia, Alvaro Soler, Pop, No, 210, 302951123, Yes, Spanish, Link, No)
-song(Flowers, Miley Cyrus, Pop, No, 200, 1086622688, Yes, English, Link, No)
-song(Ella Baila Sola, Eslabon Armado, No, 165, 413491091, Yes, Spanish, Link, No)
-song(Anti-Hero, Taylor Swift, Pop, No, 200, 853213015, Yes, English, Link, No)
-song(Cupid - Twin Ver, Fifty Fifty, Pop, No, 174, 273981595, Yes, Korean, Link, No)
-song(Daylight, David Kushner, Pop, No, 212,171173536, Yes, English, Link, No)
-song(Unholy,Sam Smith, Pop, No, 239,1125815171, Yes, English, Link, No)
-song(NIGHT DANCER,imase, Pop, No, 210, 68082449, Yes, Japanese, Link, No)
-song(overdose, natori, Pop, No, 217, 95935370, Yes, Japanese, Link, No)
-song(matsuri, Fuji Kaze, Pop, No, 225, 63119783, Yes, Japanese, Link, No)
-song(BOY, King Gnu, Pop, No, 231, 52702655, Yes, Japanese, Link, No)
-song(Answer, Lilas Ikuta, Pop, No, 242, 41064289, Yes, Japanese, Link, No)
-song(SHOUT OUT, ENHYPHEN, Pop, No, 228, 45406373, Yes, Korean, Link, No)
-song(Spicy, aespa, Pop, No, 197, 15503151, Yes, Korean, Link, No)
-song(The Planet, BTS, Pop, No, 178, 24171897, Yes, Korean, Link, No)
-song(Feel My Rhythm, Red Velvet, Pop, No, 210, 114476870, Yes, Korean, Link, No)
+value(song("Sofia", "Alvaro Soler", pp, no, 210, 302951123, yes, spanish),no)
+value(song("Flowers", "Miley Cyrus", pp, no, 200, 1086622688, yes, english),no)
+value(song("Ella Baila Sola", "Eslabon Armado",pp, no, 165, 413491091, yes, spanish),no)
+value(song("Anti-Hero", "Taylor Swift", pp, no, 200, 853213015, yes, english), no)
+value(song("Cupid Twin Ver", "Fifty Fifty", pp, no, 174, 273981595, yes, korean), no)
+value(song("Daylight","David Kushner", pp, no, 212,171173536, yes, english), no)
+value(song("Unholy","Sam Smith", pp, no, 239,1125815171, yes, english),no)
+value(song("NIGHT DANCER","imase", pp, no, 210, 68082449, yes, japanese),no)
+value(song("overdose", "natori", pp, no, 217, 95935370, yes, japanese), no)
+value(song("matsuri", "Fuji Kaze", pp, no, 225, 63119783, yes, japanese), no)
+value(song("BOY", "King Gnu", pp, no, 231, 52702655, yes, japanese), no)
+value(song("Answer", "Lilas Ikuta", pp, no, 242, 41064289, yes, japanese),no)
+value(song("SHOUT OUT", "ENHYPHEN", pp, no, 228, 45406373, yes, korean), no)
+value(song("Spicy", "aespa", pp, no, 197, 15503151, yes, korean),no)
+value(song("The Planet", "BTS", pp, no, 178, 24171897, yes, korean), no)
+value(song("Feel My Rhythm", "Red Velvet", pp, no, 210, 114476870, yes, korean),no)
+
 
 %%%%%%%%%%%%%
 COUNTRY SONGS
 %%%%%%%%%%%%%
-song(Last Night, Morgan Wallen, Country, Yes, 163, 286449038,Yes, English, Link, No)
-song(Fast Car, Luke Combs, Country, No, 265, 69843523, Yes, English, Link, No)
-song(Drink In My Hand, Eric Church, Country, No, 191, 237598665, Yes, English, Link, No)
-song(Marry Me, Thomas Rhett, Country, No, 205, 325019773, Yes, English, Link, No)
-song(Achy Breaky Heart, Billy Cyrus, Country, No, 203, 118752470, Yes, English, Link, No)
-song(Back to Tennessee, Billy Cyrus, Country, No, 256, 8669319, Yes, English, Link, No)
-song(Life is a Highway, Rascal Flatts, Country, No, 276, 540002358, Yes, English, Link, No)
-song(Jackson, Johnny Cash, Country, No, 165, 95133455, Yes, English, Link, No)
-song(Mon Pere Et Moi, Julie Daraiche, Country, No, 165, 53288, Yes, French, Link, No)
-song(Maman, Irvin Blais, Country, No, 292, 69704, Yes, French, Link, No)
-song(Une fleur pour vous, Georges Hamel, Country, No, 220, 275761, Yes, French, Link, No)
-song(Die a Happy Man,Thomas Rhett, Country, No, 227, 544480179, Yes, English, Link, No)
-song(Truth Is, Lily Rose, Country, No, 144, 5441156, Yes, English, Link, No)
-song(Looking for You, Chris Young, Country, No, 239, 13968932, Yes, English, Link, No)
-song(Shining like the Sun, The Martial, Country, No, 211, 517148, Yes, English, Link, No)
-song(Watermelon Moonshine, Lainey Wilson, Country, No, 208, 23069008, Yes, English, Link, No)
-song(Wishful Drinking, Ingrid Andress, Country, No, 254, 93222380, Yes, English, Link, No)
+value(song("Last Night", "Morgan Wallen", country, yes, 163, 286449038,yes, english), no)
+value(song("Fast Car", "Luke Combs", country, no, 265, 69843523, yes, english),no)
+value(song("Drink In My Hand", "Eric Church", country, no, 191, 237598665, yes, english), no)
+value(song("Marry Me","Thomas Rhett", country, no, 205, 325019773, yes, english),no)
+value(song("Achy Breaky Heart", "Billy Cyrus", country, no, 203, 118752470, yes, english), no)
+value(song("Back to Tennessee", "Billy Cyrus", country, no, 256, 8669319, yes, english), no)
+value(song("Life is a Highway", "Rascal Flatts", country, no, 276, 540002358, yes, english),no)
+value(song("Jackson", "Johnny Cash", country, no, 165, 95133455, yes, english), no)
+value(song("Mon Pere Et Moi", "Julie Daraiche", country, no, 165, 53288, yes, french), no)
+value(song("Maman", "Irvin Blais", country, no, 292, 69704, yes, french), no)
+value(song("Une fleur pour vous", "Georges Hamel", country, no, 220, 275761, yes, french), no)
+value(song("Die a Happy Man","Thomas Rhett", country, no, 227, 544480179, yes, english), no)
+value(song("Truth Is", "Lily Rose", country, no, 144, 5441156, yes, english), no)
+value(song("Looking for You", "Chris Young", country, no, 239, 13968932, yes, english), no)
+value(song("Shining like the Sun", "The Martial", country, no, 211, 517148, yes, english),no)
+value(song("Watermelon Moonshine", "Lainey Wilson", country, no, 208, 23069008, yes, english), no)
+value(song("Wishful Drinking", "Ingrid Andress", country, no, 254, 93222380, yes, english), no)
+
 
 %%%%%%%%%%%%%
 LO-FI SONGS
 %%%%%%%%%%%%%
-song(Sunsets, Aso, Lo-fi, No, 177, 18240462, No, None, Link, No)
-song(Cloud Bossa, Jazzinuf, Lo-fi, No, 156, 2186639, No, None, Link, No)
-song(Tiramisu, Sova, Lo-fi, No, 165, 17245, No, None, Link, No)
-song(Tea Time, Hippo Dreams, Lo-fi, No, 96, 270198, No, None, Link, No)
-song(Quiet, Aisake, Lo-fi, No, 120, 13788, No, None, Link, No)
-song(First Date, Frad, Lo-fi, No, 173,69175186, No, None, Link, No)
-song(Flower Dance, DJ Okawari, Lo-fi, No, 265, 15858187, No, None, Link, No)
-song(Sunset Lover, Petit Biscuit, Lo-fi, No, 238, 760279743, No, None, Link, No)
-song(Jocelyn, Moody, Lo-fi, No, 73, 4341363, No, None, Link, No)
-song(everlasting, orchidbae, Lo-fi, No, 127, 52806, No, None, Link, No)
-song(Anthropocene,Samsa, Lo-fi, Yes, 144, 17139464, Yes, English, Link, No)
-song(Thankful, Meltycanon, Lo-fi, No, 146, 20498318, Yes, English, Link, No)
-song(Never knew her name, internetBoi, Lo-fi, Yes, 139, 97489, Yes, English, Link, No)
-song(Waiting For You, Verzache, Lo-fi, No, 230, 60214897, Yes, English, Link, No)
-song(Smile, Nohidea, Lo-fi, Yes, 144, 69290163, Yes, English, Link, No)
-song(lovesick, potsu, Lo-fi, No, 150, 588233119, No, None, Link, No)
-song(Affection, Jinsang, Lo-fi, No, 117, 103269216, Yes, English, Link, No)
+value(song("Sunsets", "Aso",lofi, no, 177, 18240462, no, none), no)
+value(song("Cloud Bossa","Jazzinuf", lofi, no, 156, 2186639, no, none), no)
+value(song("Tiramisu", "Sova", lofi, no, 165, 17245, no, none),no)
+value(song("Tea Time", "Hippo Dreams", lofi, no, 96, 270198, no, none), no)
+value(song("Quiet", "Aisake", lofi, no, 120, 13788, no, none), no)
+value(song("First Date", "Frad", lofi, no, 173,69175186, no, none), no)
+value(song("Flower Dance", "DJ Okawari", lofi, no, 265, 15858187, no, none), no)
+value(song("Sunset Lover", "Petit Biscuit", lofi, no, 238, 760279743, no, none), no)
+value(song("Jocelyn", "Moody", lofi, no, 73, 4341363, no, none), no)
+value(song("everlasting", "orchidbae", lofi, no, 127, 52806, no, none), no)
+value(song("Anthropocene","Samsa", lofi, yes, 144, 17139464, yes, english), no)
+value(song("Thankful", "Meltycanon", lofi, no, 146, 20498318, yes, english),no)
+value(song("Never knew her name", "internetBoi", lofi, yes, 139, 97489, yes, english), no)
+value(song("Waiting For You", "Verzache", lofi, no, 230, 60214897, yes, english), no)
+value(song("Smile", "Nohidea", lofi, yes, 144, 69290163, yes, english), no)
+value(song("lovesick", "potsu", lofi, no, 150, 588233119, no, none), no)
+value(song("Affection", "Jinsang", lofi, no, 117, 103269216, yes, english), no)
+
 
 %%%%%%%%%%%%%
 ROCK SONGS
 %%%%%%%%%%%%%
-song(The Best, Tina Turner, Rock, No, 329, 196916883, Yes, English, Link, No)
-song(Money, Pink Floyd, Rock, Yes, 382, 426023156, Yes, English, Link, No)
-song(Creep, Radiohead, Rock, Yes, 238, 1204117689, Yes, English, Link, No)
-song(Karma Man, David Bowie, Rock, No, 226, 1575686, Yes, English, Link, No)
-song(Born to Run, Bruce Springsteen, Rock, No, 269, 300190501, Yes, English, Link, No)
-song(The River, Bruce Springsteen, Rock, No, 301, 155747860, Yes, English, Link, No)
-song(Landslide, Fleetwood Mac, Rock, No, 199, 548119431, Yes, English, Link, No)
-song(Gimme Shelter, The Rolling Stones, Rock, No, 270, 498972147, Yes, English, Link, No)
-song(Angie, The Rolling Stones, Rock, No, 272, 298740662, Yes, English, Link, No)
-song(Honky Tonk Women, The Rolling Stones, Rock, No, 182, 152661980, Yes, English, Link, No)
-song(Let it Rock, Bon Jovi, Rock, No, 325, 7706559, Yes, English, Link, No)
-song(Without Love, Bon Jovi, Rock, No, 210, 5049909, Yes, English, Link, No)
-song(More than Words,Extreme, Rock, No, 334, 546306514, Yes, English, Link, No)
-song(BANSHEE, Extreme, Rock, No, 214, 670401, Yes, English, Link, No)
-song(Misery Business, Paramore, Rock, No, 271, 638937963, Yes, English, Link, No)
-song(Lay it Down, Ratt, Rock, No, 265, 40486749, Yes, English, Link, No)
-song(Mother,Danzig, Rock, Yes, 204, 219094616, Yes, English, Link, No)
+value(song("The Best", "Tina Turner", rock, no, 329, 196916883, yes, english), no)
+value(song("Money", "Pink Floyd", rock, yes, 382, 426023156, yes, english), no)
+value(song("Creep", "Radiohead", rock, yes, 238, 1204117689, yes, english), no)
+value(song("Karma Man", "David Bowie", rock, no, 226, 1575686, yes, english), no)
+value(song("Born to Run", "Bruce Springsteen", rock, no, 269, 300190501, yes, english),no)
+value(song("The River", "Bruce Springsteen", rock, no, 301, 155747860, yes, english), no)
+value(song("Landslide", "Fleetwood Mac", rock, no, 199, 548119431, yes, english), no)
+value(song("Gimme Shelter", "The Rolling Stones", rock, no, 270, 498972147, yes, english), no)
+value(song("Angie", "The Rolling Stones", rock, no, 272, 298740662, yes, english), no)
+value(song("Honky Tonk Women", "The Rolling Stones", rock, no, 182, 152661980, yes, english), no)
+value(song("Let it Rock", "Bon Jovi", rock, no, 325, 7706559, yes, english), no)
+value(song("Without Love", "Bon Jovi", rock, yes, 210, 5049909, yes, english), no)
+value(song("More than Words","Extreme", rock, no, 334, 546306514, yes, english), no)
+value(song("BANSHEE", "Extreme", rock, no, 214, 670401, yes, english),no)
+value(song("Misery Business", "Paramore", rock, no, 271, 638937963, yes, english), no)
+value(song("Lay it Down", "Ratt", rock, no, 265, 40486749, yes, english), no)
+value(song("Mother","Danzig",rock, yes, 204, 219094616, yes, english), no)
+
 
 %%%%%%%%%%%%%%%%
 CLASSICAL SONGS
 %%%%%%%%%%%%%%%%
-song(Clair de Lune, Claude Debussy, Classical, No, 290, 101693056, No, None, Link, No)
-song(Reflections, Toshifumi Hinata, Classical, No, 130, 66436015, No, None, Link, No)
-song(Epilogue, Toshifumi Hinata, Classical, No, 77, 1022170, No, None, Link, No)
-song(In the Twilight, Toshifumi Hinata, Classical, No, 97, 275178, No, None, Link, No)
-song(Prelude in G Major, Johann Bach, Classical, No, 234, 28587847, No, None, Link, No)
-song(Ghost Waltz, Abel Korzeniowski, Classical, No, 170, 5532975, No, None, Link, No)
-song(Restless, Abel Korzeniowski, Classical, No, 81, 3431429, No, None, Link, No)
-song(River Flows in You, Frederic Schubert, Classical, No, 149, 35080, No, None, Link, No)
-song(Experience, Ludovico Einaudi, Classical, No, 315, 342939955, No, None, Link, No)
-song(Sonato No.42 in D Minor, Domenico Cimarosa, Classical, No, 143,13563888, No, None, Link, No)
-song(Luminous, Ludovico Einaudi, Classical, No, 263, 38448397, No, None, Link, No)
-song(River Flows in You, Yiruma, Classical, No, 188, 439186266, No, None, Link, No)
-song(amour, Jean-Michel Blais, Classical, No, 277, 5233120, No, None, Link, No)
-song(White Flowers Take Their Bath, Meredi, Classical, No, 186, 1526109, No, None, Link, No)
-song(Le Jardin de Monsieur Monet, Stephen Moccio, Classical, No, 313, 12003765, No, None, Link, No)
-song(El abraozo, Quique Sinesi, Classical, No, 199, 141289, No, None, Link, No)
-song(Silver Light, Sebastian Rochford, Classical, No, 295, 551867, No, None, Link, No)
-song(Iris, Daigo Hanada, Classical, No, 259, 209217, No, None, Link, No)
-song(Ellis Island, Meredith Monk, Classical, No, 182, 2167680, No, None, Link, No)
-song(Music For Growing Flowers, Erland Cooper, Classical, No, 73, 5802862, No, None, Link, No)
-song(Short Ride in a Fast Machine, John Adams, Classical, No, 246, 1792193, No, None, Link, No)
-song(Adelita, Francisco Tarrega, Classical, No, 128, 18200853, No, None, Link, No)
+value(song("Clair de Lune", "Claude Debussy", classical, no, 290, 101693056, no, none), no)
+value(song("Reflections", "Toshifumi Hinata", classical, no, 130, 66436015, no, none), no)
+value(song("Epilogue", "Toshifumi Hinata", classical, no, 77, 1022170, no, none), no)
+value(song("In the Twilight", "Toshifumi Hinata", classical, no, 97, 275178, no, none), no)
+value(song("Prelude in G Major", "Johann Bach", classical, no, 234, 28587847, no, none), no)
+value(song("Ghost Waltz", "Abel Korzeniowski", classical, no, 170, 5532975, no, none), no)
+value(song("Restless", "Abel Korzeniowski", classical, no, 81, 3431429, no, none), no)
+value(song("River Flows in You", "Frederic Schubert", classical, no, 149, 35080, no, none), no)
+value(song("Experience", "Ludovico Einaudi", classical, no, 315, 342939955, no, none), no)
+value(song("Sonato No 42 in D Minor", "Domenico Cimarosa", classical, no, 143,13563888, no, none), no)
+value(song("Luminous", "Ludovico Einaudi", classical, no, 263, 38448397, no, none), no)
+value(song("River Flows in You", "Yiruma", classical, no, 188, 439186266, no, none), no)
+value(song("amour", "Jean-Michel Blais", classical, no, 277, 5233120, no, none), no)
+value(song("White Flowers Take Their Bath", "Meredi", classical, no, 186, 1526109, no, none), no)
+value(song("Le Jardin de Monsieur Monet", "Stephen Moccio", classical, no, 313, 12003765, no, none), no)
+value(song("El abraozo", "Quique Sinesi", classical, no, 199, 141289, no, none), no)
+value(song("Silver Light", "Sebastian Rochford", classical, no, 295, 551867, no, none), no)
+value(song("Iris", "Daigo Hanada", classical, no, 259, 209217, no, none), no)
+value(song("Ellis Island", "Meredith Monk", classical, no, 182, 2167680, no, none), no)
+value(song("Music For Growing Flowers", "Erland Cooper", classical, no, 73, 5802862, no, none), no)
+value(song("Short Ride in a Fast Machine", "John Adams", classical, no, 246, 1792193, no, none), no)
+value(song("Adelita", "Francisco Tarrega", classical, no, 128, 18200853, no, none), no)
+
 
 %%%%%%%%%%
 R&B SONGS
 %%%%%%%%%%
-song(Kill Bill, SZA, R&B, No, 153, 963178796, Yes, English, Link, No)
-song(Die for You, The Weekend, R&B, No, 260, 1514741219, Yes, English,  Link, No)
-song(Bad Habits, Steve Lacey, R&B, Yes, 232752366306, Yes, English,  Link, No)
-song(Sure Thing, Miguel, R&B, No, 875069740, Yes, English, Link, No)
-song(Snooze, SZA, R&B, Yes, 201,307194368, Yes, English, Link, No)
-song(Lipstick Lover, Janelle Monae, R&B, No, 169, 2181061, Yes, English, Link, No)
-song(This Is, Ella Mai, R&B, No, 206,10301763, Yes, English, Link, No)
-song(ICU, Coco Jones, R&B, No, 241,20013128, Yes, English, Link, No)
-song(Alone, Jozzy, R&B, No, 181,928805, Yes, English, Link, No)
-song(I Live Above the Hobby Shop, McFabulous, R&B, No, 221, 1320155, Yes, English, Link, No)
-song(Cool, Zack Villere, R&B, No, 125,14574371, Yes, English, Link, No)
-song(Distance, Kayo Genesis, R&B, Yes, 145, 3410467, Yes, English, Link, No)
-song(Airplane Mode, Klang, R&B, No, 172, 112268, Yes, Korean, Link, No)
-song(Attention, NewJeans, R&B, No, 235, 234919381, Yes, Korean, Link, No)
-song(ONLY, Lee Hi, R&B, No, 240, 203457333, Yes, Korean, Link, No)
-song(Bambi, BAEKHYUN, R&B, No, 213, 56841295, Yes, Korean, Link, No) -->
+value(song("Kill Bill", "SZA", rb, no, 153, 963178796, yes, english), no)
+value(song("Die for You", "The Weekend", rb, no, 260, 1514741219, yes, english), no)
+value(song("Bad Habits", "Steve Lacey", rb, yes, 231, 232752366306, yes, english),  no)
+value(song("Sure Thing", "Miguel", rb, no, 195, 875069740, yes, english),no)
+value(song("Snooze", "SZA", rb, yes, 201,307194368, yes, english), no)
+value(song("Lipstick Lover", "Janelle Monae", rb, no, 169, 2181061, yes, english), no)
+value(song("This Is", "Ella Mai", rb, no, 206,10301763, yes, english), no)
+value(song("ICU", "Coco Jones", rb, no, 241,20013128, yes, english), no)
+value(song("Alone", "Jozzy", rb, no, 181,928805, yes, english), no)
+value(song("I Live Above the Hobby Shop", "McFabulous", rb, no, 221, 1320155, yes, english), no)
+value(song("Cool", "Zack Villere", rb, no, 125,14574371, yes, english), no)
+value(song("Distance", "Kayo Genesis", rb, yes, 145, 3410467, yes, english), no)
+value(song("Airplane Mode", "Klang", rb, no, 172, 112268, yes, korean), no)
+value(song("Attention", "NewJeans", rb, no, 235, 234919381, yes, korean), no)
+value(song("ONLY", "Lee Hi", rb, no, 240, 203457333, yes, korean), no)
+value(song("Bambi", "BAEKHYUN", rb, no, 213, 56841295, yes, korean), no)
+    
 
 %%% Age %%%
 value(age,0-20)
@@ -429,6 +372,29 @@ value(activity(videogames),false)
 value(activity(movies),false)
 value(activity(traveling),false)
 
+%%% Singing %%%
+value(singing,yes)
+
+%%% Pizza Topping %%%
+value(pizza,veggie)
+
+%%% Vacation %%%
+value(vacation,beach)
+
+%%% Movies %%%
+value(movie(thriller),false)
+value(movie(comedy),false)
+value(movie(action),false)
+value(movie(romcom),false)
+value(movie(horror),false)
+value(movie(drama),false)
+
+%%% Seasons %%%
+value(season(spring),false)
+value(season(summer),false)
+value(season(autumn),false)
+value(season(winter),false)
+
 </dataset>
 
 <!--=======================================================================-->
@@ -446,30 +412,309 @@ value(activity(traveling),false)
 %%% Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-isactivity(reading)
-isactivity(painting)
-isactivity(drawing)
-isactivity(rockclimbing)
-isactivity(dancing)
-isactivity(cooking)
-isactivity(walking)
-isactivity(swimming)
-isactivity(jogging)
-isactivity(videogames)
-isactivity(movies)
-isactivity(traveling)
+%%%%%%%%%%%%%%%%%
+%%% Age Rules %%%
+%%%%%%%%%%%%%%%%%
+age(0-20) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), no) & ~leq(X, 10000000) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), yes) 
+age(0-20) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), yes) & leq(X, 10000000) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), yes) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, X, LYRICS, LANGUAGE), no)
+age(21-40) :: value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), no) ==> 
+    ~value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+age(41-60) :: value(song(NAME, ARTIST, rock, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) ==> 
+    ~value(song(NAME, ARTIST, rock, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, rock, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+age(41-60) :: age(61+)
+age(61+) :: value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) ==> 
+    ~value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) & 
+    value(song(NAME, ARTIST, GENRE, yes, LENGTH, STREAMS, LYRICS, LANGUAGE), no)
+
+%%%%%%%%%%%%%%%%%%
+%%% Vibe Rules %%%
+%%%%%%%%%%%%%%%%%%
+creation(party) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & same(X, pp) & ~leq(Y, 10000000) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), yes)
+creation(party) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & same(X, rap) & ~leq(Y, 10000000) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), yes)
+creation(party) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & same(X, rb) & ~leq(Y, 10000000) ==>  
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, Y, LYRICS, LANGUAGE), yes)
+creation(party) :: age(0-20)
+creation(party) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no)
+
+creation(workout) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, pp) ==>  
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+creation(workout) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, rock) ==>
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+
+creation(study) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no) & same(X,lofi) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no) &
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes)
+creation(study) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no) & same(X,classical) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes)
+
+creation(relax) :: value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) & same(X, country) & ~leq(Y,250) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) &
+    value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), yes)
+creation(relax) :: value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) & same(X, lofi) & ~leq(Y,250) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), yes)
+creation(relax) :: value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) & same(X, classical) & ~leq(Y,250) ==>  
+    ~value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, Y, STREAMS, LYRICS, LANGUAGE), yes)
+
+%%%%%%%%%%%%%%%%%%
+%%% Time Rules %%%
+%%%%%%%%%%%%%%%%%%
+time(morning) :: value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, "Maman") ==> 
+    ~value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+time(morning) :: value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, "Spirit Animal") ==> 
+    ~value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+
+time(night) :: value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, "Sunset Lover") ==> 
+    ~value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+time(night) :: value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, "In the Twilight") ==> 
+    ~value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% Activity Rules %%%
+%%%%%%%%%%%%%%%%%%%%%%
+activity(reading) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, X), no) & distinct(X, english) & distinct(X, none) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, X), no) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, X), yes) 
+
+activity(painting) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Toshifumi Hinata") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+activity(painting) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Ludovico Einaudi") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+
+activity(dancing) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, country) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+activity(dancing) :: value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, rb) ==> 
+    ~value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, X, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
+
+activate(cooking) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Taylor Swift") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+activity(cooking) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, yes, LANGUAGE), no) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, yes, LANGUAGE), no) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, yes, LANGUAGE), yes)
+activity(cooking) :: value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes) ==> 
+    ~value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), yes) & 
+    value(song(NAME, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, no, LANGUAGE), no) 
+
+activity(hiking) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Bruce Springsteen") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+activity(hiking) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Bon Jovi") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+
+activity(movies) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"orchidbae") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+activity(movies) :: value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X,"Verzache") ==> 
+    ~value(song(NAME,X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(NAME, X, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes) 
+
+activity(traveling) :: activity(reading)
+activity(traveling) :: value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & same(X, "Life is a Highway") ==> 
+    ~value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), no) & 
+    value(song(X, ARTIST, GENRE, EXPLICIT, LENGTH, STREAMS, LYRICS, LANGUAGE), yes)
 
 
-select(age,X) :: value(age,Y) ==> value(age,X) & ~value(age,Y)
-select(vibe,X) :: value(vibe,Y) ==> value(vibe,X) & ~value(vibe,Y)
-select(timeofday,X) :: value(timeofday,Y) ==> value(timeofday,X) & ~value(timeofday,Y)
-select(personality,X) :: value(personality,Y) ==> value(personality,X) & ~value(personality,Y)
+%%%%%%%%%%%%%%%%%%%
+%%% Pizza Rules %%%
+%%%%%%%%%%%%%%%%%%%
+topping(veggie):: value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) 
+topping(veggie):: value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)  ==>
+    ~value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
 
-select(activity(reading),Y) :: value(activity(reading),Z) ==> value(activity(reading),Y) & ~value(activity(reading),Z)
-select(activity(painting),Y) :: value(activity(painting),Z) ==> value(activity(painting),Y) & ~value(activity(painting),Z)
-select(activity(drawing),Y) :: value(activity(drawing),Z) ==> value(activity(drawing),Y) & ~value(activity(drawing),Z)
-select(activity(X),Y) :: value(activity(X),Z) ==> value(activity(X),Y) & ~value(activity(X),Z)
+topping(pepperoni):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),yes)  ==>
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),no)
 
+topping(cheese):: value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+topping(cheese):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & leq(250,LENGTH) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+topping(mushroom):: value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==> 
+    ~value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+topping(mushroom):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & leq(STREAMS,10000000) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+topping(pineapple):: value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==> 
+    ~value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+topping(pineapple):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & leq(LENGTH, 200) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+    
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% Vacation Rules %%%
+%%%%%%%%%%%%%%%%%%%%%%    
+vacation(beach) :: value(song(NAME,"Eric Church",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==>  
+    ~value(song(NAME,"Eric Church",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,"Eric Church",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+vacation(city) :: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & leq(LENGTH, 240) & leq(180,LENGTH) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+vacation(camping):: value(song("Kill Bill",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==>
+    ~value(song("Kill Bill",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song("Kill Bill",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+vacation(farm):: value(song("Flowers",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song("Flowers",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) &
+    value(song("Flowers",ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+%%%%%%%%%%%%%%%%%%%
+%%% Movie Rules %%%
+%%%%%%%%%%%%%%%%%%%
+movie(thriller):: value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(thriller):: value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(thriller):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),no)
+
+movie(comedy):: value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)& 
+    value(song(NAME,ARTIST,GENRE,yes,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+movie(action):: value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(action):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & leq(240,LENGTH) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+movie(romcom):: value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,rock,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(romcom):: value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(romcom):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & leq(LENGTH,100000000) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+movie(horror):: value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(horror):: value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,rb,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+movie(horror):: value(song(NAME,ARTIST,lofi,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,lofi,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,lofi,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no)
+
+movie(drama):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,no,LANGUAGE),no)
+
+%%%%%%%%%%%%%%%%%%%%
+%%% Season Rules %%%
+%%%%%%%%%%%%%%%%%%%%
+season(spring):: value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(spring):: value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(spring):: value(song(NAME,"Drake",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,"Drake",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,"Drake",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+season(summer):: value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,pp,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(summer):: value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,country,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(summer):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),yes)
+
+season(fall):: value(song(NAME,"Fleetwood Mac",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,"Fleetwood Mac",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,"Fleetwood Mac",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(fall):: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & leq(250,LENGTH) ==>
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+season(winter):: value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,classical,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(winter):: value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,ARTIST,rap,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+season(winter):: value(song(NAME,"SZA",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) ==> 
+    ~value(song(NAME,"SZA",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),no) & 
+    value(song(NAME,"SZA",GENRE,EXPLICIT,LENGTH,STREAMS,LYRICS,LANGUAGE),yes)
+
+%%%%%%%%%%%%%%%%%%%%
+%%% Lyrics Rules %%%
+%%%%%%%%%%%%%%%%%%%%
+sing(lyrics) :: value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),yes) ==>
+    ~value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),yes) & 
+    value(song(NAME,ARTIST,GENRE,EXPLICIT,LENGTH,STREAMS,yes,LANGUAGE),no)
+
+generate(X) :- value(X,yes)
+
+select(age,X) :: value(age,Y) ==> value(age,X) & ~value(age,Y) & 
+    age(X)
+select(vibe,X) :: value(vibe,Y) ==> value(vibe,X) & ~value(vibe,Y) & 
+    creation(X)
+select(timeofday,X) :: value(timeofday,Y) ==> value(timeofday,X) & ~value(timeofday,Y) & 
+    time(X)
+select(singing,X) :: value(singing,Y) ==> value(singing,X) & ~value(singing,Y) &
+    sing(X)
+select(pizza,X) :: value(pizza,Y) ==> value(pizza,X) & ~value(pizza,Y) &
+    topping(X)
+select(vacation,X) :: value(vacation,Y) ==> value(vacation,X) & ~value(vacation,Y) &
+    vacation(X)
+
+select(activity(X),Y) :: value(activity(X),Z) ==> value(activity(X),Y) & ~value(activity(X),Z) &
+    activity(activity(X))
+select(movie(X),Y) :: value(movie(X),Z) ==> value(movie(X),Y) & ~value(movie(X),Z) & 
+    movie(movie(X))
+select(season(X),Y) :: value(season(X),Z) ==> value(season(X),Y) & ~value(season(X),Z) &
+    season(season(X))
+
+<!-- click(generate) :: value(X,yes) ==> -->
+    
 </ruleset>
 
 
