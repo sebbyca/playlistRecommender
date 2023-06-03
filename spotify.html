@@ -177,7 +177,7 @@
                 <td><input type='checkbox' id='season(summer)' onchange='modcheck(this)'/>Summer</td>
             </tr>
             <tr>
-                <td><input type='checkbox' id='season(fall)' onchange='modcheck(this)'/>Fall</td>
+                <td><input type='checkbox' id='season(autumn)' onchange='modcheck(this)'/>Fall</td>
             </tr>
             <tr>
                 <td><input type='checkbox' id='season(winter)' onchange='modcheck(this)'/>Winter</td>
@@ -188,14 +188,19 @@
 
 <fieldset>
     <center>
-        <button id='generate' onclick='modbutton(this)'>Generate Playlist</button>
+        <button id='generate' onclick='handle(this)'>Generate Playlist</button>
     </center>
 </fieldset>
+
+<div id='playlist' style='display:none'>
+    <h1>HI</h1>
+</div>
 
 <!--=======================================================================-->
 
 
 <dataset id='lambda' style='font-family:courier;display:none' rows='20' cols='20'>
+
 
 value(song("Creepin", "Metro Boomin", rap, yes, 221, 694189985, yes, english), no)
 value(song("All My Life", "Lil Durk", rap, yes, 223, 28041004, yes, english), no)
@@ -411,6 +416,7 @@ value(season(winter),false)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%
 %%% Age Rules %%%
@@ -713,7 +719,9 @@ select(movie(X),Y) :: value(movie(X),Z) ==> value(movie(X),Y) & ~value(movie(X),
 select(season(X),Y) :: value(season(X),Z) ==> value(season(X),Y) & ~value(season(X),Z) &
     season(season(X))
 
-<!-- click(generate) :: value(X,yes) ==> -->
+
+click(generate)  ::  value(X, yes) ==> 
+    style(playlist, "display", inline) & innerhtml(playlist, X)
     
 </ruleset>
 
